@@ -745,9 +745,13 @@ var myChart = null;
 activequiz.show_chart_bar = function () {
 
     create_chart('bar');
+    /*
     setInterval(() => {
         create_chart('bar');
     },1000);
+     */
+
+    update_chart();
 };
 
 activequiz.show_chart_pie = function () {
@@ -796,8 +800,6 @@ function create_chart(chart_typ){
                 data: data,
                 options: options
             })
-            myChart.update();
-
         });
     });
 
@@ -806,7 +808,6 @@ function create_chart(chart_typ){
 
 
 function update_chart(){
-
 
         $.ajax({
             url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
