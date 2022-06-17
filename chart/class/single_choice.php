@@ -19,15 +19,6 @@ class single_choice
            $this->data = array_merge($this->data, $current_data);
        }
 
-/*
-                foreach ($steps_data as $summary) {
-                    $responsesummary = $summary[0]->getResponsesummary();
-                    $this->data = $this->addValue($this->data, $responsesummary);
-                }
-*/
-
-
-
         foreach ($steps_data as $summary) {
             $responsesummary = $summary->getAnswer();
             $this->data = $this->addValue($this->data, $responsesummary);

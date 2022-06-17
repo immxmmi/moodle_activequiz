@@ -303,11 +303,9 @@ class mod_activequiz_renderer extends plugin_renderer_base
     public function render_quiz(\mod_activequiz\activequiz_attempt $attempt,
                                 \mod_activequiz\activequiz_session $session)
     {
-
         $this->init_quiz_js($attempt, $session);
 
         $output = '';
-
 
         $output .= html_writer::start_div('', array('id' => 'quizview'));
 
@@ -324,7 +322,6 @@ class mod_activequiz_renderer extends plugin_renderer_base
         $output .= $loadingpix;
         $output .= html_writer::end_div();
 
-
         $output .= html_writer::div($instructions, 'activequizbox hidden', array('id' => 'instructionsbox'));
 
         // have a quiz not responded box for the instructor to know who hasn't responded.
@@ -338,18 +335,12 @@ class mod_activequiz_renderer extends plugin_renderer_base
         // have a quiz information box to show statistics, feedback and more.
         $output .= html_writer::div('', 'activequizbox hidden', array('id' => 'quizinfobox'));
 
-        ############################################################################################
-        # --> DOC
-        ############################################################################################
-
-
-        $output .= '	
-        <div class="container" id= "chart" style="display: none">
+        // CHART OUTPUT
+        $output .= '<div class="container" id= "chart" style="display: none">
 			<div class="chartwrapper">
 				<canvas id="apiChart"></canvas>
 			</div>
-        </div>
-';
+        </div>';
 
         foreach ($attempt->getSlots() as $slot) {
             //render question form.
@@ -358,13 +349,7 @@ class mod_activequiz_renderer extends plugin_renderer_base
 
         $output .= html_writer::end_div();
         echo $output;
-
     }
-
-
-    ############################################################################################
-    # --> DOC
-    ############################################################################################
 
 
     /**
@@ -389,9 +374,7 @@ class mod_activequiz_renderer extends plugin_renderer_base
                 'id' => 'q' . $qnum, 'class' => 'activequiz_question',
                 'name' => 'q' . $qnum));
 
-
         $output .= $attempt->render_question($slot, '');
-
 
         $output .= html_writer::empty_tag('input', array('type' => 'hidden', 'name' => 'slots',
             'value' => $slot));
@@ -439,7 +422,6 @@ class mod_activequiz_renderer extends plugin_renderer_base
      */
     public function render_controls()
     {
-
         $output = '';
         $inqcontrol = '';
 
@@ -521,6 +503,7 @@ class mod_activequiz_renderer extends plugin_renderer_base
         );
 
 
+        // CHART MENU
         $inqcontrol .=  html_writer::start_tag('div', array('class' => 'dropdown'));
 
         $inqcontrol .=  html_writer::tag('button', "Show Chart",
@@ -545,8 +528,6 @@ class mod_activequiz_renderer extends plugin_renderer_base
             'id' =>  'show_chart_doughnut',
             'onclick' => 'activequiz.show_chart_doughnut();'));
         $inqcontrol .= html_writer::end_tag('div');
-
-
 
         $inqcontrol .= html_writer::end_tag('div');
 
@@ -611,11 +592,6 @@ class mod_activequiz_renderer extends plugin_renderer_base
         $this->page->requires->js('/lib/jquery/jquery-3.5.1.min.js');
         $this->page->requires->js('/mod/activequiz/js/classList.js');
         $this->page->requires->js('/mod/activequiz/js/core.js');
-       // $this->page->requires->js('/mod/activequiz/js/chart/Chart.min.js');
-
-
-
-
 
         // add window.onload script manually to handle removing the loading mask
         echo html_writer::start_tag('script', array('type' => 'text/javascript'));
@@ -721,18 +697,7 @@ EOD;
             }
         }
 
-        ############################################################################################
-        # --> DOC
-        ############################################################################################
-        // print jsinfo to javascript
-        echo html_writer::start_tag('script', array('type' => 'text/javascript'));
-        echo "rtqinitinfo = " . json_encode($jsinfo);
-        echo html_writer::end_tag('script');
 
-
-        ############################################################################################
-        # --> DOC
-        ############################################################################################
 
 
 
