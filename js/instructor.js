@@ -820,9 +820,9 @@ function update_chart(chart_typ){
         }).done(function (results) {
                 myChart.config._config.data = results.data.chartdata;
                 myChart.update();
-          /*  if(!JSON.stringify(myChart.config._config.data.labels)===JSON.stringify(results.data.chartdata.labels)){
+            if(JSON.stringify(myChart.config._config.data.labels)===JSON.stringify(results.data.chartdata.labels)){
                 console.log("neu");
-            }*/
+            }
             })
 
 
