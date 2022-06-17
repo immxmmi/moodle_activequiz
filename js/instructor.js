@@ -745,14 +745,13 @@ var myChart = null;
 activequiz.show_chart_bar = function () {
 
     create_chart('bar');
-    /*
+
     setInterval(() => {
-        create_chart('bar');
+        update_chart('bar');
     },1000);
-     */
 
 
-    update_chart('bar');
+
 };
 
 activequiz.show_chart_pie = function () {
@@ -814,7 +813,6 @@ function update_chart(chart_typ){
 
 
     //declare variables
-    var data;
     var url = './chart/chart_api.php';
 
         $.ajax({
