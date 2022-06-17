@@ -116,6 +116,9 @@ activequiz.start_quiz = function () {
 
     this.ajax.create_request('/mod/activequiz/quizdata.php', params, function (status, response) {
 
+        //var nextquestionbtn = document.getElementById('show_chart_menu');
+        //nextquestionbtn.disabled = false;
+
         // if there's only 1 question this will return true
         if (response.lastquestion == 'true') {
             // disable the next question button
@@ -132,7 +135,7 @@ activequiz.start_quiz = function () {
 
     var inquizcontrols = document.getElementById('inquizcontrols');
     inquizcontrols.classList.remove('btn-hide');
-    this.control_buttons(['endquestion', 'toggleresponses', 'togglenotresponded']);
+    this.control_buttons(['endquestion', 'toggleresponses', 'togglenotresponded', 'show_chart_menu']);
 };
 
 
