@@ -745,8 +745,6 @@ var myChart = null;
 activequiz.show_chart_bar = function () {
 
     create_chart('bar');
-    console.log(myChart.config._config.data.labels == myChart.config._config.data.labels);
-    console.log(myChart.config._config.data.labels);
 
 };
 
@@ -820,10 +818,11 @@ function update_chart(chart_typ){
             url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
             dataType: 'json',
         }).done(function (results) {
-            if(myChart.config._config.data == results.data.chartdata){
+            if(myChart.config._config.data.labels == myChart.config._config.data.labels){
                 console.log("ident")
             }else{
                 console.log("mayer")
+
                 myChart.config._config.data = results.data.chartdata;
             }
             })
