@@ -781,6 +781,8 @@ EOD;
 
 /*
         $response = html_writer::start_div('response');
+
+  */
         // check if group mode, if so, give the group name the attempt is for
         if ($anonymous) {
             if ($this->rtq->group_mode()) {
@@ -800,7 +802,7 @@ EOD;
 
             }
         }
-
+/*
         $response .= html_writer::tag('h3', $name, array('class' => 'responsename'));
         $response .= html_writer::div($attempt->responsesummary, 'responsesummary');
 
