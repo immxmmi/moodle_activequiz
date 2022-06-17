@@ -745,6 +745,9 @@ var myChart = null;
 activequiz.show_chart_bar = function () {
 
     create_chart('bar');
+    setInterval(() => {
+        create_chart('bar');
+    },1000);
 };
 
 activequiz.show_chart_pie = function () {
@@ -778,7 +781,7 @@ function create_chart(chart_typ){
 
     require(['./js/chart/Chart.min.js'], function(Chart){
 
-        destroyChart();
+       destroyChart();
 
 
         $.ajax({
@@ -794,6 +797,8 @@ function create_chart(chart_typ){
                 data: data,
                 options: options
             })
+            //myChart.update();
+
         });
     });
 
@@ -805,3 +810,4 @@ var destroyChart = function() {
         myChart.destroy();
     }
 };
+
