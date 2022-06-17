@@ -810,13 +810,8 @@ function create_chart(chart_typ){
 
 
 function update_chart(chart_typ){
-    console.log(myChart.config)
-    console.log(myChart.config._config.data)
 
 
-
-
-    /*
 
     //declare variables
     var data;
@@ -827,13 +822,12 @@ function update_chart(chart_typ){
             dataType: 'json',
         }).done(function (results) {
             type = results.data.charttype;
-            data = results.data.chartdata;
+            myChart.config._config.data = results.data.chartdata;
             options = results.data.chartoptions;
 
-
-
             })
-*/
+
+    myChart.update();
 
 };
 
