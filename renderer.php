@@ -777,8 +777,10 @@ EOD;
         global $DB;
 
 
-        $response = html_writer::start_div('response');
+        $response = '';
 
+/*
+        $response = html_writer::start_div('response');
         // check if group mode, if so, give the group name the attempt is for
         if ($anonymous) {
             if ($this->rtq->group_mode()) {
@@ -803,7 +805,7 @@ EOD;
         $response .= html_writer::div($attempt->responsesummary, 'responsesummary');
 
         $response .= html_writer::end_div();
-
+*/
         return $response;
     }
 
