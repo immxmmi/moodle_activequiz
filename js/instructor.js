@@ -820,9 +820,8 @@ function update_chart(chart_typ){
         }).done(function (results) {
                 myChart.config._config.data = results.data.chartdata;
                 myChart.update();
+                console.log(myChart.config._config.data.datasets);/*
             if(JSON.stringify(myChart.config._config.data.datasets)===JSON.stringify(results.data.chartdata.datasets)){
-                console.log(myChart.config._config.data.datasets);
-                console.log(results.data.chartdata.datasets);
             }else{
                 console.log("neu");
                 console.log(myChart.config._config.data.datasets);
@@ -834,9 +833,9 @@ function update_chart(chart_typ){
                 console.log("neu lab");
             }else{
                 console.log("alt lab");
-
             }
 
+            */
             })
 
 
