@@ -800,7 +800,7 @@ function create_chart(chart_typ){
 
     setInterval(() => {
         update_chart(chart_typ);
-    },5000);
+    },10000);
 
 };
 
