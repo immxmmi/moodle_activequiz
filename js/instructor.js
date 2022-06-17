@@ -800,7 +800,7 @@ function create_chart(chart_typ){
 
     setInterval(() => {
         update_chart(chart_typ);
-    },5000);
+    },1000);
 
 };
 
@@ -819,6 +819,7 @@ function update_chart(chart_typ){
             dataType: 'json',
         }).done(function (results) {
             if(!JSON.stringify(myChart.config._config.data.labels)===JSON.stringify(results.data.chartdata.labels)){
+                console.log("neu");
                 myChart.config._config.data = results.data.chartdata;
             }
             })
