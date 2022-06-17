@@ -751,7 +751,7 @@ activequiz.show_chart_bar = function () {
     },1000);
      */
 
-    update_chart();
+    update_chart('bar');
 };
 
 activequiz.show_chart_pie = function () {
@@ -807,7 +807,7 @@ function create_chart(chart_typ){
 
 
 
-function update_chart(){
+function update_chart(chart_typ){
 
         $.ajax({
             url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
