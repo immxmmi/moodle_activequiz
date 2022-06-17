@@ -821,8 +821,8 @@ function update_chart(chart_typ){
                 myChart.config._config.data = results.data.chartdata;
                 myChart.update();
             if(JSON.stringify(myChart.config._config.data.datasets)===JSON.stringify(results.data.chartdata.datasets)){
-                console.log(myChart.config._config.data.datasets.data);
-                console.log(results.data.chartdata.datasets.data);
+                console.log(myChart.config._config.data.datasets);
+                console.log(results.data.chartdata.datasets);
             }else{
                 console.log("neu");
                 console.log(myChart.config._config.data.datasets);
