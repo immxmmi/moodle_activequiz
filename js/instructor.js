@@ -822,9 +822,13 @@ function update_chart(chart_typ){
             data = results.data.chartdata;
             options = results.data.chartoptions;
 
-            console.log(myChart.get("data"));
+            console.log(
+                myChart
+
+            )
+
             })
-            myChart.update();
+
 
 };
 
