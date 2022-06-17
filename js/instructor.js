@@ -748,7 +748,7 @@ activequiz.show_chart_bar = function () {
 
     setInterval(() => {
         update_chart('bar');
-    },1000);
+    },10000);
 
 
 
@@ -819,10 +819,7 @@ function update_chart(chart_typ){
             url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
             dataType: 'json',
         }).done(function (results) {
-            type = results.data.charttype;
             myChart.config._config.data = results.data.chartdata;
-            options = results.data.chartoptions;
-
             })
 
     myChart.update();
