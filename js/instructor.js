@@ -116,9 +116,6 @@ activequiz.start_quiz = function () {
 
     this.ajax.create_request('/mod/activequiz/quizdata.php', params, function (status, response) {
 
-        //var nextquestionbtn = document.getElementById('show_chart_menu');
-        //nextquestionbtn.disabled = false;
-
         // if there's only 1 question this will return true
         if (response.lastquestion == 'true') {
             // disable the next question button
@@ -135,7 +132,7 @@ activequiz.start_quiz = function () {
 
     var inquizcontrols = document.getElementById('inquizcontrols');
     inquizcontrols.classList.remove('btn-hide');
-    this.control_buttons(['endquestion', 'toggleresponses', 'togglenotresponded', 'show_chart_menu']);
+    this.control_buttons(['endquestion', 'toggleresponses', 'togglenotresponded', 'show_chart_menu','show_chart_hide','show_chart_pie','show_chart_bar','show_chart_doughnut']);
 };
 
 
@@ -279,14 +276,14 @@ activequiz.gather_results = function () {
 
                 if (activequiz.get('lastquestion') == 'true') { // don't enable the next question button
 
-                    activequiz.control_buttons(['closesession', 'reloadresults', 'jumptoquestion', 'repollquestion', 'showcorrectanswer', 'toggleresponses']);
+                    activequiz.control_buttons(['closesession', 'reloadresults', 'jumptoquestion', 'repollquestion', 'showcorrectanswer', 'toggleresponses', 'show_chart_menu','show_chart_hide','show_chart_pie','show_chart_bar','show_chart_doughnut']);
                 } else {
                     //otherwise enable the next question button and repoll question
 
-                    activequiz.control_buttons(['closesession', 'nextquestion', 'jumptoquestion', 'repollquestion', 'reloadresults', 'showcorrectanswer', 'toggleresponses']);
+                    activequiz.control_buttons(['closesession', 'nextquestion', 'jumptoquestion', 'repollquestion', 'reloadresults', 'showcorrectanswer', 'toggleresponses', 'show_chart_menu','show_chart_hide','show_chart_pie','show_chart_bar','show_chart_doughnut']);
                 }
             } else {
-                activequiz.control_buttons(['closesession', 'nextquestion', 'jumptoquestion', 'repollquestion', 'reloadresults', 'showcorrectanswer', 'toggleresponses']);
+                activequiz.control_buttons(['closesession', 'nextquestion', 'jumptoquestion', 'repollquestion', 'reloadresults', 'showcorrectanswer', 'toggleresponses', 'show_chart_menu','show_chart_hide','show_chart_pie','show_chart_bar','show_chart_doughnut']);
             }
         }
 
@@ -347,7 +344,7 @@ activequiz.repoll_question = function () {
         } else {
             activequiz.set('lastquestion', 'false');
         }
-        activequiz.control_buttons(['endquestion', 'toggleresponses', 'togglenotresponded']);
+        activequiz.control_buttons(['endquestion', 'toggleresponses', 'togglenotresponded', 'show_chart_menu','show_chart_hide','show_chart_pie','show_chart_bar','show_chart_doughnut']);
         activequiz.waitfor_question(response.questionid, response.questiontime, response.delay, response.nextstarttime);
     });
 
@@ -393,7 +390,7 @@ activequiz.next_question = function () {
         } else {
             activequiz.set('lastquestion', 'false');
         }
-        activequiz.control_buttons(['endquestion', 'toggleresponses', 'togglenotresponded']);
+        activequiz.control_buttons(['endquestion', 'toggleresponses', 'togglenotresponded', 'show_chart_menu','show_chart_hide','show_chart_pie','show_chart_bar','show_chart_doughnut']);
         activequiz.waitfor_question(response.questionid, response.questiontime, response.delay, response.nextstarttime);
     });
 };
@@ -524,7 +521,7 @@ activequiz.jumpto_question = function () {
             window.location.hash = '';
 
             // now go to the question
-            activequiz.control_buttons(['endquestion', 'toggleresponses', 'togglenotresponded']);
+            activequiz.control_buttons(['endquestion', 'toggleresponses', 'togglenotresponded', 'show_chart_menu','show_chart_hide','show_chart_pie','show_chart_bar','show_chart_doughnut']);
             activequiz.waitfor_question(response.questionid, response.questiontime, response.delay, response.nextstarttime);
         });
 
@@ -587,7 +584,7 @@ activequiz.show_correct_answer = function () {
 
             activequiz.set('showingcorrectanswer', 'true');
 
-            activequiz.control_buttons(['showcorrectanswer']);
+            activequiz.control_buttons(['showcorrectanswer', 'show_chart_menu','show_chart_hide','show_chart_pie','show_chart_bar','show_chart_doughnut']);
             activequiz.loading(null, 'hide');
 
         });

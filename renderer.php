@@ -539,10 +539,10 @@ class mod_activequiz_renderer extends plugin_renderer_base
             'id' => 'show_chart_pie',
             'onclick' => 'activequiz.show_chart_pie();'));
         $inqcontrol .=  html_writer::tag('button', "Bar Chart",  array( 'class' => 'btn',
-            'id' => 'show_chart_bar()',
+            'id' => 'show_chart_bar',
             'onclick' => 'activequiz.show_chart_bar();'));
         $inqcontrol .=  html_writer::tag('button', "Doughnut Chart",  array( 'class' => 'btn',
-            'id' =>  'activequiz.show_chart_doughnut()',
+            'id' =>  'show_chart_doughnut',
             'onclick' => 'activequiz.show_chart_doughnut();'));
         $inqcontrol .= html_writer::end_tag('div');
 
