@@ -723,6 +723,10 @@ activequiz.clear_and_hide_notresponded = function () {
 };
 
 
+
+//  CHART MENU ACTION
+var myChart = null;
+
 activequiz.show_chart_hide = function () {
 
     var chart = document.getElementById('chart');
@@ -735,25 +739,16 @@ activequiz.show_chart_hide = function () {
         hide_btn.innerText = "show";
         chart.style.display = "none";
     }
-};
-
-
-
-
-var myChart = null;
-
+}
 activequiz.show_chart_bar = function () {
     create_chart('bar');
 };
-
 activequiz.show_chart_pie = function () {
     create_chart('pie');
 };
-
 activequiz.show_chart_doughnut = function () {
     create_chart('doughnut');
 };
-
 
 function create_chart(chart_typ){
 
@@ -800,7 +795,6 @@ function create_chart(chart_typ){
     },1000);
 
 };
-
 function update_chart(chart_typ){
 
     //declare variables
@@ -816,7 +810,6 @@ function update_chart(chart_typ){
             }
         })
 };
-
 var destroyChart = function() {
     if( myChart !== null ) {
         myChart.destroy();

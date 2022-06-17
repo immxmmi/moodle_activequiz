@@ -512,7 +512,6 @@ class mod_activequiz_renderer extends plugin_renderer_base
               'id' => 'show_chart_menu'
           ));
 
-
         $inqcontrol .=  html_writer::start_tag('div', array('class' => 'dropdown-content'));
         $inqcontrol .=  html_writer::tag('button', "show", array( 'class' => 'btn',
             'id' => 'show_chart_hide',
@@ -709,7 +708,6 @@ EOD;
         ############################################################################################
         # --> DOC
         ############################################################################################
-
 
 
 
