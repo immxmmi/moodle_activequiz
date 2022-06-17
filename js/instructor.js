@@ -819,10 +819,10 @@ function update_chart(chart_typ){
             dataType: 'json',
         }).done(function (results) {
             if(myChart.config._config.data.labels == results.data.chartdata.labels){
+                console.log("mayer")
+            }else{
                 console.log(results.data.chartdata.labels)
                 console.log(myChart.config._config.data.labels)
-            }else{
-                console.log("mayer")
 
                 myChart.config._config.data = results.data.chartdata;
             }
