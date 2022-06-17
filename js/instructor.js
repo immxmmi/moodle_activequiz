@@ -748,7 +748,7 @@ activequiz.show_chart_bar = function () {
 
     setInterval(() => {
         update_chart('bar');
-    },10000);
+    },100000);
 
 
 
