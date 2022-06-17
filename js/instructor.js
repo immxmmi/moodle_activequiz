@@ -809,7 +809,7 @@ function create_chart(chart_typ){
 
 
 function update_chart(chart_typ){
-    console.log(myChart.data.labels)
+    console.log(myChart.config)
 
 
 
