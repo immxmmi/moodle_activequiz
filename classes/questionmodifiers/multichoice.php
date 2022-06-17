@@ -71,11 +71,13 @@ class multichoice implements \mod_activequiz\questionmodifiers\ibasequestionmodi
         $answers = array();
         $dbanswers = array();
 
+        /*
 
         foreach ($attempts as $attempt) {
             /** @var \mod_activequiz\activequiz_attempt $attempt */
 
             // only count attempts where they have "responded"
+        /*
             if ($attempt->responded == 0) {
                 continue;
             }
@@ -107,6 +109,7 @@ class multichoice implements \mod_activequiz\questionmodifiers\ibasequestionmodi
         foreach ($dbanswers as $dbanswer) {
             $xaxis[$dbanswer->id] = \question_utils::to_plain_text($dbanswer->answer, $dbanswer->answerformat);
         }
+        */
 
         $newoutput = $this->add_chart($output, $xaxis, $answers);
 
