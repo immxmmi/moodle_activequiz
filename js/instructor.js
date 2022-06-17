@@ -811,6 +811,8 @@ function create_chart(chart_typ){
 
 function update_chart(chart_typ){
     console.log(myChart)
+    console.log(myChart.context)
+    console.log(myChart.config)
 
 
 
