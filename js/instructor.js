@@ -780,9 +780,7 @@ function create_chart(chart_typ){
     var url = './chart/chart_api.php';
 
     require(['./js/chart/Chart.min.js'], function(Chart){
-
-        console.log(myChart.type);
-       //destroyChart();
+       destroyChart();
 
 
         $.ajax({
