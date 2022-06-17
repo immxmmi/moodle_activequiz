@@ -781,7 +781,8 @@ function create_chart(chart_typ){
 
     require(['./js/chart/Chart.min.js'], function(Chart){
 
-       destroyChart();
+
+       //destroyChart();
 
 
         $.ajax({
@@ -797,7 +798,7 @@ function create_chart(chart_typ){
                 data: data,
                 options: options
             })
-            //myChart.update();
+            myChart.update();
 
         });
     });
