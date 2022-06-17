@@ -746,12 +746,6 @@ activequiz.show_chart_bar = function () {
 
     create_chart('bar');
 
-    setInterval(() => {
-        update_chart('bar');
-    },50000);
-
-
-
 };
 
 activequiz.show_chart_pie = function () {
@@ -802,6 +796,11 @@ function create_chart(chart_typ){
             })
         });
     });
+
+
+    setInterval(() => {
+        update_chart(chart_typ);
+    },50000);
 
 };
 
