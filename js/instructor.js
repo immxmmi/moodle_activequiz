@@ -809,6 +809,11 @@ function create_chart(chart_typ){
 
 function update_chart(chart_typ){
 
+
+    //declare variables
+    var data;
+    var url = './chart/chart_api.php';
+
         $.ajax({
             url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
             dataType: 'json',
