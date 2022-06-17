@@ -745,7 +745,8 @@ var myChart = null;
 activequiz.show_chart_bar = function () {
 
     create_chart('bar');
-    console.log(myChart.config._config.data)
+    console.log(myChart.config._config.data.labels == myChart.config._config.data.labels);
+    console.log(myChart.config._config.data.labels);
 
 };
 
