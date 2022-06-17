@@ -818,14 +818,14 @@ function update_chart(chart_typ){
             url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
             dataType: 'json',
         }).done(function (results) {
-                myChart.config._config.data = results.data.chartdata;
-                myChart.update();
-                console.log(myChart.config._config.data.datasets[0].data);
-            if(JSON.stringify(myChart.config._config.data.datasets[0].data)===JSON.stringify(results.data.chartdata.datasets[0].data)){
+
+
+            if(JSON.stringify(myChart.config._config.data.datasets)===JSON.stringify(results.data.chartdata.datasets[0].data)){
+                console.log("alt vhart");
             }else{
                 console.log("neu");
-                console.log(myChart.config._config.data.datasets);
-                console.log(results.data.chartdata.datasets);
+                myChart.config._config.data = results.data.chartdata;
+                myChart.update();
             }
 
             if(JSON.stringify(myChart.config._config.data.labels)!==JSON.stringify(results.data.chartdata.labels)){
