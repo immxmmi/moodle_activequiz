@@ -818,7 +818,12 @@ function update_chart(chart_typ){
             url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
             dataType: 'json',
         }).done(function (results) {
-            myChart.config._config.data = results.data.chartdata;
+            if(myChart.config._config.data == results.data.chartdata){
+                console.log("ident")
+            }else{
+                console.log("mayer")
+                myChart.config._config.data = results.data.chartdata;
+            }
             })
 
     myChart.update();
