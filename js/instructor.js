@@ -820,19 +820,9 @@ function update_chart(chart_typ){
         }).done(function (results) {
 
 
-            if(JSON.stringify(myChart.config._config.data.datasets[0].data)===JSON.stringify(results.data.chartdata.datasets[0].data)){
-                console.log("alt vhart");
-            }else{
-
+            if(JSON.stringify(myChart.config._config.data.datasets[0].data)!==JSON.stringify(results.data.chartdata.datasets[0].data)){
                 myChart.config._config.data = results.data.chartdata;
                 myChart.update();
-            }
-
-            if(JSON.stringify(myChart.config._config.data.labels)!==JSON.stringify(results.data.chartdata.labels)){
-                console.log("neu lab");
-            }else {
-                console.log("alt lab");
-
             }
             })
 
