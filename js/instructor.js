@@ -804,6 +804,27 @@ function create_chart(chart_typ){
 };
 
 
+
+function update_chart(){
+
+
+        $.ajax({
+            url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
+            dataType: 'json',
+        }).done(function (results) {
+            type = results.data.charttype;
+            data = results.data.chartdata;
+            options = results.data.chartoptions;
+
+            console.log(myChart.get("data"));
+            })
+            myChart.update();
+
+};
+
+
+
+
 var destroyChart = function() {
     if( myChart !== null ) {
         myChart.destroy();
