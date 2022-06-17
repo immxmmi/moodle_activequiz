@@ -809,10 +809,11 @@ function create_chart(chart_typ){
 
 
 function update_chart(chart_typ){
-    console.log(
-        myChart
+    console.log(myChart.data)
+    console.log(myChart.data.data)
+    console.log(myChart.data.options)
 
-    )/*
+    /*
 
     //declare variables
     var data;
