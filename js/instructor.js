@@ -819,28 +819,22 @@ function update_chart(chart_typ){
             dataType: 'json',
         }).done(function (results) {
 
-/*
-                if(!JSON.stringify(myChart.config._config.data.labels)!==JSON.stringify(results.data.chartdata.labels)){
-                    myChart.config._config.data = results.data.chartdata;
-                }else {
-                    console.log("alt lab");
-                }
-*/
 
-            if(!JSON.stringify(myChart.config._config.data.datasets[0].data)===JSON.stringify(results.data.chartdata.datasets[0].data)){
+            if(JSON.stringify(myChart.config._config.data.datasets[0].data)===JSON.stringify(results.data.chartdata.datasets[0].data)){
+                console.log("alt vhart");
+            }else{
+
                 myChart.config._config.data = results.data.chartdata;
                 myChart.update();
             }
 
-
-
-
+            if(JSON.stringify(myChart.config._config.data.labels)!==JSON.stringify(results.data.chartdata.labels)){
+                console.log("neu lab");
+            }else {
+                console.log("alt lab");
 
             }
-
-
-
-            )
+            })
 
 
 };
