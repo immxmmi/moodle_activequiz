@@ -728,14 +728,16 @@ activequiz.show_chart_hide = function () {
     var chart = document.getElementById('chart');
     var hide_btn = document.getElementById('show_chart_hide');
 
-    if (chart.style.display == "none") {
+    if(chart.style.display == "none"){
         hide_btn.innerText = "hide";
         chart.style.display = "";
-    } else {
+    }else{
         hide_btn.innerText = "show";
         chart.style.display = "none";
     }
 };
+
+
 
 
 var myChart = null;
@@ -756,7 +758,7 @@ activequiz.show_chart_doughnut = function () {
 };
 
 
-function create_chart(chart_typ) {
+function create_chart(chart_typ){
 
     var hide_btn = document.getElementById('show_chart_hide');
     var chart = document.getElementById('chart');
@@ -770,12 +772,13 @@ function create_chart(chart_typ) {
     var ctx = apiChart.getContext("2d");
 
 
+
     //declare variables
     var data;
     var url = './chart/chart_api.php';
 
-    require(['./js/chart/Chart.min.js'], function (Chart) {
-        destroyChart();
+    require(['./js/chart/Chart.min.js'], function(Chart){
+       destroyChart();
 
 
         $.ajax({
@@ -797,40 +800,56 @@ function create_chart(chart_typ) {
 
     setInterval(() => {
         update_chart(chart_typ);
-    }, 1000);
+    },1000);
 
 };
 
 
-function update_chart(chart_typ) {
+
+
+function update_chart(chart_typ){
+
 
 
     //declare variables
     var url = './chart/chart_api.php';
 
-    $.ajax({
-        url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
-        dataType: 'json',
-    }).done(function (results) {
+        $.ajax({
+            url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
+            dataType: 'json',
+        }).done(function (results) {
 
-            if (!JSON.stringify(myChart.config._config.data.labels) !== JSON.stringify(results.data.chartdata.labels)) {
-                myChart.config._config.data = results.data.chartdata;
-                myChart.update();
-            } else if (!JSON.stringify(myChart.config._config.data.datasets[0].data) === JSON.stringify(results.data.chartdata.datasets[0].data)) {
+/*
+                if(!JSON.stringify(myChart.config._config.data.labels)!==JSON.stringify(results.data.chartdata.labels)){
+                    myChart.config._config.data = results.data.chartdata;
+                }else {
+                    console.log("alt lab");
+                }
+*/
+
+            if(!JSON.stringify(myChart.config._config.data.datasets[0].data)===JSON.stringify(results.data.chartdata.datasets[0].data)){
                 myChart.config._config.data = results.data.chartdata;
                 myChart.update();
             }
 
 
-        }
-    )
+
+
+
+            }
+
+
+
+            )
 
 
 };
 
 
-var destroyChart = function () {
-    if (myChart !== null) {
+
+
+var destroyChart = function() {
+    if( myChart !== null ) {
         myChart.destroy();
     }
 };
