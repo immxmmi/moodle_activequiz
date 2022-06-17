@@ -818,13 +818,13 @@ function update_chart(chart_typ){
             url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
             dataType: 'json',
         }).done(function (results) {
-            if(!JSON.stringify(myChart.config._config.data.labels)===JSON.stringify(results.data.chartdata.labels)){
-                console.log("neu");
                 myChart.config._config.data = results.data.chartdata;
-            }
+                myChart.update();
+          /*  if(!JSON.stringify(myChart.config._config.data.labels)===JSON.stringify(results.data.chartdata.labels)){
+                console.log("neu");
+            }*/
             })
 
-    myChart.update();
 
 };
 
