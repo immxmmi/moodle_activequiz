@@ -830,11 +830,10 @@ function update_chart(chart_typ){
 
             if(JSON.stringify(myChart.config._config.data.labels)!==JSON.stringify(results.data.chartdata.labels)){
                 console.log("neu lab");
-            }else{
+            }else {
                 console.log("alt lab");
-            }
 
-            */
+            }
             })
 
 
