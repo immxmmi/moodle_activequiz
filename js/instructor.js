@@ -820,7 +820,7 @@ function update_chart(chart_typ){
         }).done(function (results) {
 
 
-            if(JSON.stringify(myChart.config._config.data.datasets)===JSON.stringify(results.data.chartdata.datasets[0].data)){
+            if(JSON.stringify(myChart.config._config.data.datasets)===JSON.stringify(results.data.chartdata.datasets)){
                 console.log("alt vhart");
             }else{
                 console.log("neu");
