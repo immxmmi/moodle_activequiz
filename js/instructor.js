@@ -750,6 +750,10 @@ activequiz.show_chart_bar = function () {
         create_chart('bar');
     },1000);
      */
+    console.log(
+        myChart
+
+    )
 
     update_chart('bar');
 };
@@ -822,10 +826,7 @@ function update_chart(chart_typ){
             data = results.data.chartdata;
             options = results.data.chartoptions;
 
-            console.log(
-                myChart
 
-            )
 
             })
 
