@@ -818,7 +818,7 @@ function update_chart(chart_typ){
             url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
             dataType: 'json',
         }).done(function (results) {
-            if(myChart.config._config.data.labels == results.data.chartdata.labels){
+            if(myChart.config._config.data.labels.equals(results.data.chartdata.labels)){
                 console.log("mayer")
             }else{
                 console.log(results.data.chartdata.labels)
