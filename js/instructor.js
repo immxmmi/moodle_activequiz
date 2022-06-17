@@ -315,7 +315,7 @@ activequiz.repoll_question = function () {
 
     this.hide_all_questionboxes();
     this.clear_and_hide_qinfobox();
-    this.control_buttons([]);
+    this.control_buttons(['show_chart_menu','show_chart_hide','show_chart_pie','show_chart_bar','show_chart_doughnut']);
 
     // we want to send a request to re-poll the previous question, or the one we're reviewing now
     var params = {
@@ -356,7 +356,7 @@ activequiz.next_question = function () {
 
     this.hide_all_questionboxes();
     this.clear_and_hide_qinfobox();
-    this.control_buttons([]);
+    this.control_buttons([ 'show_chart_menu','show_chart_hide','show_chart_pie','show_chart_bar','show_chart_doughnut']);
 
     // ensure that the previous question's form is hidden
     if (activequiz.get('currentquestion') != 'undefined') {
@@ -487,7 +487,7 @@ activequiz.jumpto_question = function () {
 
         this.hide_all_questionboxes();
         this.clear_and_hide_qinfobox();
-        this.control_buttons([]);
+        this.control_buttons(['show_chart_menu','show_chart_hide','show_chart_pie','show_chart_bar','show_chart_doughnut']);
 
         var params = {
             'action': 'gotoquestion',
