@@ -105,7 +105,7 @@ activequiz.getQuizInfo = function () {
 activequiz.start_quiz = function () {
 
     // make an ajax callback to quizdata to start the quiz
-
+    destroyChart();
     var params = {
         'action': 'startquiz',
         'rtqid': activequiz.get('rtqid'),
@@ -351,7 +351,7 @@ activequiz.repoll_question = function () {
 };
 
 activequiz.next_question = function () {
-
+    destroyChart();
     // hide all question boxes and disable certain buttons
 
     this.hide_all_questionboxes();
@@ -439,7 +439,7 @@ activequiz.end_question = function () {
 };
 
 activequiz.close_session = function () {
-
+    destroyChart();
     activequiz.loading(M.util.get_string('closingsession', 'activequiz'), 'show');
 
     var params = {
@@ -743,13 +743,10 @@ activequiz.show_chart_hide = function () {
 var myChart = null;
 
 activequiz.show_chart_bar = function () {
-
     create_chart('bar');
-
 };
 
 activequiz.show_chart_pie = function () {
-
     create_chart('pie');
 };
 
@@ -804,12 +801,7 @@ function create_chart(chart_typ){
 
 };
 
-
-
-
 function update_chart(chart_typ){
-
-
 
     //declare variables
     var url = './chart/chart_api.php';
@@ -818,19 +810,12 @@ function update_chart(chart_typ){
             url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
             dataType: 'json',
         }).done(function (results) {
-
-
             if(JSON.stringify(myChart.config._config.data.datasets[0].data)!==JSON.stringify(results.data.chartdata.datasets[0].data)){
                 myChart.config._config.data = results.data.chartdata;
                 myChart.update();
             }
-            })
-
-
+        })
 };
-
-
-
 
 var destroyChart = function() {
     if( myChart !== null ) {
