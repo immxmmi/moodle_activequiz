@@ -808,8 +808,9 @@ function create_chart(chart_typ){
 
 
 
+
 function update_chart(chart_typ){
-    console.log(myChart.config)
+    console.log(myChart)
 
 
 
