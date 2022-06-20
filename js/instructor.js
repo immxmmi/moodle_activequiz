@@ -771,8 +771,6 @@ function create_chart(chart_typ){
 
     require(['./js/chart/Chart.min.js'], function(Chart){
        destroyChart();
-
-
         $.ajax({
             url: '' + url + '?sessionid=' + activequiz.get('sessionid') + '&type=' + chart_typ + '',
             dataType: 'json',
