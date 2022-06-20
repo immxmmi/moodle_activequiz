@@ -222,7 +222,7 @@ class multichoice implements \mod_activequiz\questionmodifiers\ibasequestionmodi
 */
 
         // now set up chart vars to be then put into javascript
-        /*
+
                 $chartheight = 600;
                 $chartwidth = 600;
                 $labels = array();
@@ -321,7 +321,7 @@ class multichoice implements \mod_activequiz\questionmodifiers\ibasequestionmodi
 
 
 
-        */
+
         return $chartoutput . $output;
     }
 
