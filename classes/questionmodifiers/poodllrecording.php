@@ -30,7 +30,6 @@ require_once($CFG->dirroot . '/question/engine/lib.php');
  */
 class poodllrecording implements \mod_activequiz\questionmodifiers\ibasequestionmodifier {
 
-
     public function requires_jquery() {
     }
 
@@ -62,7 +61,6 @@ class poodllrecording implements \mod_activequiz\questionmodifiers\ibasequestion
      */
     public function modify_questionresults_duringquiz($question, $attempts, $output) {
         global $DB;
-
         // if no attempts just return the output
         if (empty($attempts)) {
             return $output;
@@ -96,9 +94,6 @@ class poodllrecording implements \mod_activequiz\questionmodifiers\ibasequestion
             $newoutput = $output;
         }
 
-
         return $newoutput;
     }
-
-
 }

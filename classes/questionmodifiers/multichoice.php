@@ -47,9 +47,6 @@ class multichoice implements \mod_activequiz\questionmodifiers\ibasequestionmodi
     public function add_js()
     {
         global $PAGE;
-        //$PAGE->requires->js('/mod/activequiz/js/chartjs/Chart.min.js');
-        //$PAGE->requires->js('/mod/activequiz/js/chart/Chart.min.js');
-       // $PAGE->requires->js('/mod/activequiz/js/chart_api.js');
     }
 
     /**
@@ -162,7 +159,6 @@ class multichoice implements \mod_activequiz\questionmodifiers\ibasequestionmodi
      */
     protected function update_answers_multi(&$answers, $qa, $questiondef)
     {
-
         // get the order first so we can get the field ids
         $answerorder = $questiondef->get_order($qa);
 
@@ -204,7 +200,6 @@ class multichoice implements \mod_activequiz\questionmodifiers\ibasequestionmodi
      */
     protected function add_chart($output, $xaxis, $answers)
     {
-
         $totalanswers = 0;
         foreach ($answers as $answercount) {
             $totalanswers = $totalanswers + $answercount;
@@ -212,17 +207,8 @@ class multichoice implements \mod_activequiz\questionmodifiers\ibasequestionmodi
 
         $chartoutput = '';
 
-        /*
-        <div class="container">
-			<div class="chartwrapper">
-				<canvas id="apiChart"></canvas>
-			</div>
-			</div>
-        </div>';
-*/
-
         // now set up chart vars to be then put into javascript
-
+        /*
                 $chartheight = 600;
                 $chartwidth = 600;
                 $labels = array();
@@ -321,7 +307,7 @@ class multichoice implements \mod_activequiz\questionmodifiers\ibasequestionmodi
 
 
 
-
+        */
         return $chartoutput . $output;
     }
 
