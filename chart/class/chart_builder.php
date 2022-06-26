@@ -77,6 +77,7 @@ class chart_builder
                         'animateScale' => true
                     )
                 );
+                $this->msg .= "";
                 break;
             default:
                 $this->response_code = 404;
