@@ -80,8 +80,18 @@ echo "</pre>";
 
 
 
-$steps_data = new attempt_step_data($steps);
-$steps_data = $steps_data->getStepDataList();
+
+$steps_data = array();
+
+foreach ($step_ids as $step_id) {
+    $step_data = new attempt_step_data($step_id);
+    array_push($steps_data,$step_data);
+}
+
+
+echo "<pre>";
+print_r($steps_data);
+echo "</pre>";
 
 
 
