@@ -77,4 +77,14 @@ class attempt_steps
         return $this->answer_list;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getQuestionattemptid()
+    {
+        return $this->questionattemptid;
+    }
+
+
+
 }

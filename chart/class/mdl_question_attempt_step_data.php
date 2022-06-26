@@ -12,15 +12,18 @@ class attempt_step_data
     private $value = array();
     private $answer_list = array();
 
-    public function __construct($step)
+    public function __construct($steps)
     {
         echo "<pre>";
-        print_r($step);
+        print_r($steps);
         echo "</pre>";
-/*
-        $step_id = $step->getId();
+
+
         global $DB;
 
+        foreach($steps as $step){
+
+        $step_id = $step->getId();
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_step_data" WHERE attemptstepid = :attemptstepid';
                 $params = array('attemptstepid' => $step_id);
                 $step_data = $DB->get_records_sql($sql, $params);
@@ -31,13 +34,14 @@ class attempt_step_data
                         $data->attemptstepid,
                         $data->name,
                         explode(',', $data->value),
-                            "",
+                            $step->getQuestionattemptid(),
                         $this->answer_list
                     );
                     array_push($this->answer_list, $current_data);
                 }
 
-*/
+        }
+
 
     }
 
