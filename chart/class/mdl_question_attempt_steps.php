@@ -18,38 +18,21 @@ class attempt_steps
     public function __construct($questionattemptid)
     {
         global $DB;
-       // if ($answers !== null) {
 
-            //foreach ($answers as $questionattemptid) {
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_steps" WHERE questionattemptid = :questionattemptid';
                 $params = array('questionattemptid' => $questionattemptid);
                 $result = $DB->get_records_sql($sql, $params);
 
-        echo "<pre>";
-        print_r($result);
-        echo "</pre>";
+                        $this->id=$result->id;
+                        $this->questionattemptid=$result->questionattemptid;
+                        $this->sequencenumber=$result->sequencenumber;
+                        $this->state=$result->state;
+                        $this->fraction=$result->fraction;
+                        $this->timecreated=$result->timecreated;
+                        $this->userid=$result->userid;
+      }
 
-/*
-                foreach ($result as $answer) {
 
-                  //  $currentstep = $this->builder(
-                        $this->id=$answer->id;
-                        $this->questionattemptid=$answer->questionattemptid;
-                        $this->sequencenumber=$answer->sequencenumber;
-                        $this->state=$answer->state;
-                        $this->fraction=$answer->fraction;
-                        $this->timecreated=$answer->timecreated;
-                        $this->userid=$answer->userid;
-                        $this->answer_list=$questionattemptid[0]->getQuestionsummary();
-                    //array_push($this->attemptstepids, $currentstep);
-
-                }
-*/
-
-            }
-       // }
-
-    //}
 
 
     private function builder($id, $questionattemptid, $sequencenumber, $state, $fraction, $timecreated, $userid, array $answer_list)
