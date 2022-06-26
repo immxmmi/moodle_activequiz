@@ -88,12 +88,12 @@ switch ($questionType) {
         break;
     case "multi":
         $multi->load_quiz_data($answers,$steps_data);
-        foreach ($steps_data as $summary) {
-            $responsesummary = $summary->getAnswer();
-        }
+        //foreach ($steps_data as $summary) {
+        //    $responsesummary = $summary->getAnswer();
+        //}
 
 
-        $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues());
+       // $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues());
         break;
 
 
