@@ -12,7 +12,7 @@ class attempt_step_data
     private $value = array();
     private $answer_list = array();
 
-    public function __construct($step_id, $questionattemptid)
+    public function __construct($step_id)
     {
         global $DB;
 
@@ -26,7 +26,7 @@ class attempt_step_data
                         $data->attemptstepid,
                         $data->name,
                         explode(',', $data->value),
-                        $questionattemptid,
+                            "",
                         $this->answer_list
                     );
                     array_push($this->answer_list, $current_data);
