@@ -64,10 +64,10 @@ foreach ($questionattemptids as $questionattemptid) {
 
 
     echo "<pre>";
-    print_r($step);
-    echo "</pre>";
+    foreach ($step as $stepID) {
+        array_push($step_ids, $stepID->getId());
+    }
 
-    array_push($step_ids,$step);
     array_push($steps,$step);
 }
 
