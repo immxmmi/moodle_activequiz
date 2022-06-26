@@ -13,7 +13,6 @@ class attempt_step_data
 
     public function __construct($step_id)
     {
-        echo $step_id;
         global $DB;
 
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_step_data" WHERE attemptstepid = :attemptstepid';
