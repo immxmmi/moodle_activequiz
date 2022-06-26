@@ -19,6 +19,10 @@
     $session = new activequiz_session($sessionid);
     ##########################################
 
+    echo "<pre>";
+    echo "print_r(".$session.")";
+    echo "</pre>";
+
     # # # # # # # #  -ACTIVE-QUIZ ATTEMPTS- # # # # # # # #
    /*
     $activequiz_attempt = new activequiz_attempt($sessionid);
