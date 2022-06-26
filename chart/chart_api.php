@@ -40,7 +40,7 @@ echo "<pre>";
 print_r($allquestionengids);
 echo "</pre>";
 
-$slot = 1; // SLOT
+$slot = $session->getCurrentquestion(); // SLOT
 
 $question_attemp = new question_attempts($allquestionengids, $slot);
 
