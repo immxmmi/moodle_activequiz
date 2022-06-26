@@ -23,23 +23,18 @@
     $activequiz_attempt = new activequiz_attempt($sessionid);
     $allquestionengids = $activequiz_attempt->getAllQuestionengids();
 
-echo "<pre>";
-print_r($allquestionengids);
-echo "</pre>";
 
-echo "<pre>";
-print_r($allquestionengids);
-echo "</pre>";
+
 
 $slot = $session->getCurrentquestion(); // SLOT
 
 $question_attemp = new question_attempts($allquestionengids, $slot);
 
-
+/*
 echo "<pre>";
 print_r($question_attemp);
 echo "</pre>";
-
+*/
 
 
 
@@ -47,11 +42,11 @@ echo "</pre>";
 
 $answers = $question_attemp->getListOfAnswers();
 
-
+/*
 echo "<pre>";
 print_r($answers);
 echo "</pre>";
-
+*/
 
 // LISTE OF questionattemptids
 $questionattemptids = array();
