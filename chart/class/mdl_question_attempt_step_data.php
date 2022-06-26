@@ -14,6 +14,9 @@ class attempt_step_data
 
     public function __construct($step)
     {
+        print_r($step);
+
+        /*
         $step_id = $step->getId();
         global $DB;
 
@@ -32,6 +35,7 @@ class attempt_step_data
                     );
                     array_push($this->answer_list, $current_data);
                 }
+        */
     }
 
     private function build($id, $attemptstepid, $name, $value,$questionattemptid, array $answer_list)
