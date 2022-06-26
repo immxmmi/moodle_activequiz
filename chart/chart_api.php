@@ -67,11 +67,11 @@ foreach ($question_attemp as $qA) {
 
 $answers = $question_attemp->getListOfAnswers();
 
-/*
+
 echo "<pre>";
 print_r($answers);
 echo "</pre>";
-*/
+
 /*
 $steps = new attempt_steps($answers);
 
