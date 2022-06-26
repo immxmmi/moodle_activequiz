@@ -9,7 +9,7 @@ class attempt_step_data
     private $id;
     private $attemptstepid;
     private $name;
-    private $value;
+    private $value = array();
 
 
 
@@ -25,7 +25,7 @@ class attempt_step_data
                     $this->id = $data->id;
                     $this->attemptstepid = $data->attemptstepid;
                     $this->name = $data->name;
-                    $this->value = $data->value;
+                    $this->value = implode(',', $data->value);
                 }
     }
 
