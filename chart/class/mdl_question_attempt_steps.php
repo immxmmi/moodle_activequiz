@@ -25,6 +25,11 @@ class attempt_steps
                 $params = array('questionattemptid' => $questionattemptid[0]->getid());
                 $result = $DB->get_records_sql($sql, $params);
 
+        echo "<pre>";
+        print_r($result);
+        echo "</pre>";
+
+/*
                 foreach ($result as $answer) {
 
                   //  $currentstep = $this->builder(
@@ -37,7 +42,9 @@ class attempt_steps
                         $this->userid=$answer->userid;
                         $this->answer_list=$questionattemptid[0]->getQuestionsummary();
                     //array_push($this->attemptstepids, $currentstep);
+
                 }
+*/
 
             }
        // }
