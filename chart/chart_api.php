@@ -36,6 +36,19 @@ echo "<pre>";
 print_r($allquestionengids);
 echo "</pre>";
 
+echo "<pre>";
+print_r($allquestionengids);
+echo "</pre>";
+
+$slot = 0; // SLOT
+
+$question_attemp = new question_attempts($allquestionengids, $slot);
+
+
+echo "<pre>";
+print_r($question_attemp);
+echo "</pre>";
+
 #######################################################
 
 /*
