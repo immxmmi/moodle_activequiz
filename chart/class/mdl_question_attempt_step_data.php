@@ -12,8 +12,9 @@ class attempt_step_data
     private $value = array();
     private $answer_list = array();
 
-    public function __construct($step_id)
+    public function __construct($step)
     {
+        $step_id = $step->getId();
         global $DB;
 
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_step_data" WHERE attemptstepid = :attemptstepid';

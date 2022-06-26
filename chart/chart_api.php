@@ -59,8 +59,8 @@ foreach ($questionattemptids as $questionattemptid) {
 
 $steps_data = array();
 
-foreach ($step_ids as $step_id) {
-    $step_data = new attempt_step_data($step_id);
+foreach ($steps as $step) {
+    $step_data = new attempt_step_data($step);
     array_push($steps_data,$step_data);
 }
 
