@@ -50,6 +50,20 @@ print_r($question_attemp);
 echo "</pre>";
 
 
+$list_of_question_attempts_id = [];
+
+foreach ($question_attemp as $qA) {
+    echo "<pre>";
+    print_r($qA);
+    echo "</pre>";
+
+}
+
+
+
+}
+
+
 $answers = $question_attemp->getListOfAnswers();
 
 
