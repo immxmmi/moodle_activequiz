@@ -53,7 +53,9 @@ echo "</pre>";
 $list_of_question_attempts_id = array();
 
 foreach ($question_attemp as $qA) {
-    array_push($list_of_question_attempts_id, $qA->getId());
+
+    echo $qA->getId();
+    //  array_push($list_of_question_attempts_id, $qA->getId());
 }
     echo "<pre>";
     print_r($list_of_question_attempts_id);
