@@ -55,7 +55,7 @@
 
             foreach ($steps_data as $summary) {
                 $responsesummary = $summary->getAnswer();
-                $msg =  $summary;
+                $msg =  $responsesummary;
             }
 
 
