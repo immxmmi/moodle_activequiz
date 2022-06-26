@@ -11,6 +11,7 @@ class attempt_steps
     private $fraction;
     private $timecreated;
     private $userid;
+    private $answer_list = array();
 
     public function __construct($questionattemptid)
     {
@@ -22,18 +23,39 @@ class attempt_steps
 
 
                 foreach ($result as $answer) {
-                    echo $this->id=$answer->id;
-                        $this->id=$answer->id;
-                        $this->questionattemptid=$answer->questionattemptid;
-                        $this->sequencenumber=$answer->sequencenumber;
-                        $this->state=$answer->state;
-                        $this->fraction=$answer->fraction;
-                        $this->timecreated=$answer->timecreated;
-                        $this->userid=$answer->userid;
+
+                    $currentstep = $this->builder(
+                        $answer->id,
+                        $answer->questionattemptid,
+                        $answer->sequencenumber,
+                        $answer->state,
+                        $answer->fraction,
+                        $answer->timecreated,
+                        $answer->userid,
+                        $this->answer_list);
+                    array_push($this->answer_list, $currentstep);
                 }
 
 
             }
+
+    private function builder($id, $questionattemptid, $sequencenumber, $state, $fraction, $timecreated, $userid, array $answer_list)
+    {
+        $current_step = new attempt_steps(null);
+        $current_step->id = $id;
+        $current_step->questionattemptid = $questionattemptid;
+        $current_step->sequencenumber = $sequencenumber;
+        $current_step->state = $state;
+        $current_step->fraction = $fraction;
+        $current_step->timecreated = $timecreated;
+        $current_step->userid = $userid;
+        $current_step->answer_list = $answer_list;
+        return $current_step;
+    }
+
+
+
+
 
     /**
      * @return array
