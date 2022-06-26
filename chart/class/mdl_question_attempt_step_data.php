@@ -21,9 +21,8 @@ class attempt_step_data
 
         foreach($steps as $step){
         $step_id = $step->getId();
-        $questionattemptid = $step->getQuestionattemptid();
+        $this->questionattemptid = $step->getQuestionattemptid();
 
-        echo $questionattemptid;
 
 
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_step_data" WHERE attemptstepid = :attemptstepid';
@@ -31,20 +30,18 @@ class attempt_step_data
                 $step_data = $DB->get_records_sql($sql, $params);
 
 
-        /*
                 foreach ($step_data as $data) {
                     $current_data = $this->build(
                         $data->id,
                         $data->attemptstepid,
                         $data->name,
                         explode(',', $data->value),
-                            "$step->getQuestionattemptid()",
+                        $this->questionattemptid,
                         $this->answer_list
                     );
                     array_push($this->answer_list, $current_data);
                 }
 
-        */
         }
 
 
