@@ -19,17 +19,8 @@
     $session = new activequiz_session($sessionid);
     ##########################################
 
-    echo "<pre>";
-    print_r($session);
-    echo "</pre>";
-
     # # # # # # # #  -ACTIVE-QUIZ ATTEMPTS- # # # # # # # #
     $activequiz_attempt = new activequiz_attempt($sessionid);
-echo "<pre>";
-print_r($activequiz_attempt);
-echo "</pre>";
-
-
     $allquestionengids = $activequiz_attempt->getAllQuestionengids();
 
 echo "<pre>";
@@ -72,15 +63,15 @@ foreach ($answers as $answer) {
 
 $steps = array();
 foreach ($questionattemptids as $questionattemptid) {
-
-    //echo $questionattemptid;
-     $step = new attempt_steps($questionattemptid);
-    /*
+    $step = new attempt_steps($questionattemptid);
     array_push($steps,$step);
-
-    */
 }
 
+
+
+echo "<pre>";
+print_r($steps);
+echo "</pre>";
 
 
 
