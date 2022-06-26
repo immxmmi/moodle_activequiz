@@ -71,7 +71,7 @@ foreach ($answers as $qA) {
     //  array_push($list_of_question_attempts_id, $qA->getId());
 */
 
-    echo $qA->getId();
+    echo $qA[0]->getId();
 break;
 }
 
