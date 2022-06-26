@@ -70,9 +70,8 @@ foreach ($answers as $qA) {
     echo $qA[0]->getId();
     //  array_push($list_of_question_attempts_id, $qA->getId());
 */
-    echo "<pre>";
-    print_r($qA->getId());
-    echo "</pre>";
+
+    print_r($qA);
 
 }
 
