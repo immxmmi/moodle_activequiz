@@ -33,7 +33,7 @@ class question_attempts
                 echo "</br></br>QUESTION ID: ".$questionengids."</br></br>";
 
                 echo "<pre>";
-                print_r($question_attemps);
+                print_r($result);
                 echo "</pre>";
 
 
