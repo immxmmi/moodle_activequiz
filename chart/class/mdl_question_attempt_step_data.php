@@ -15,6 +15,7 @@ class attempt_step_data
     public function __construct($steps)
     {
 
+    if($steps != null){
 
 
         global $DB;
@@ -44,6 +45,7 @@ class attempt_step_data
 
         }
 
+    }
 
     }
 
