@@ -40,7 +40,7 @@ echo "<pre>";
 print_r($allquestionengids);
 echo "</pre>";
 
-$slot = 0; // SLOT
+$slot = 1; // SLOT
 
 $question_attemp = new question_attempts($allquestionengids, $slot);
 
