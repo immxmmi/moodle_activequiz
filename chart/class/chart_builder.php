@@ -43,6 +43,7 @@ class chart_builder
                         )
                     )
                 );
+                $this->msg .= $msg;
                 break;
             case 'pie':
                 $this->data = array(
@@ -77,7 +78,6 @@ class chart_builder
                         'animateScale' => true
                     )
                 );
-                $this->msg .= $msg;
                 break;
             default:
                 $this->response_code = 404;
