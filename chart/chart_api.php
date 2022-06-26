@@ -68,12 +68,12 @@ foreach ($questionattemptids as $questionattemptid) {
 
 
 echo "<pre>";
-print_r($step_ids);
+print_r($steps);
 echo "</pre>";
 
 
 
-
+/*
 $steps_data = array();
 
 foreach ($step_ids as $step_id) {
@@ -87,7 +87,7 @@ echo "<pre>";
 print_r($steps_data);
 echo "</pre>";
 
-
+*/
 
 
 
