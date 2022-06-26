@@ -43,13 +43,18 @@ foreach ($answers as $answer) {
 
 
 $steps = array();
+$step_quest_ids = array();
 $step_ids = array();
 foreach ($questionattemptids as $questionattemptid) {
     $step = new attempt_steps($questionattemptid);
     $step = $step->getAnswerList();
+
+    $step_ids["".$questionattemptid] = array();
+
     foreach ($step as $stepID) {
-        array_push($step_ids[$questionattemptid], $stepID->getId());
+        array_push($step_ids["".$questionattemptid], $stepID->getId());
     }
+    array_push($step_quest_ids, $step_ids["".$questionattemptid]);
     array_push($steps,$step);
 }
 
