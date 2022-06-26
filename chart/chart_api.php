@@ -49,6 +49,16 @@ echo "<pre>";
 print_r($question_attemp);
 echo "</pre>";
 
+
+$answers = $question_attemp->getListOfAnswers();
+
+
+echo "<pre>";
+print_r($answers);
+echo "</pre>";
+
+
+
 #######################################################
 
 /*
