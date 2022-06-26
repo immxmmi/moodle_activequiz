@@ -10,7 +10,7 @@ class attempt_step_data
     private $attemptstepid;
     private $name;
     private $value = "";
-    private $answer = "";
+    private $answer;
 
 
     public function __construct($step_id)
