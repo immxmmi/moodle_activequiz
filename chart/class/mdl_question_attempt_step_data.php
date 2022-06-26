@@ -26,8 +26,25 @@ class attempt_step_data
                     $this->attemptstepid = $data->attemptstepid;
                     $this->name = $data->name;
                     $this->value = explode(',', $data->value);
+                    echo  $this->value;
                 }
     }
+
+
+
+    private function build($id, $attemptstepid, $name, $value, array $answer_list)
+    {
+        $currentStep = new attempt_step_data(null);
+        $currentStep->id = $id;
+        $currentStep->attemptstepid = $attemptstepid;
+        $currentStep->name = $name;
+        $currentStep->value = $value;
+        $currentStep->answer_list = $answer_list;
+        $currentStep->answer = $answer_list[$currentStep->value];
+        return $currentStep;
+    }
+
+
 
 
     /**
