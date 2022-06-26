@@ -61,13 +61,10 @@ $step_ids = array();
 foreach ($questionattemptids as $questionattemptid) {
     $step = new attempt_steps($questionattemptid);
     $step = $step->getAnswerList();
-
-
     echo "<pre>";
     foreach ($step as $stepID) {
         array_push($step_ids, $stepID->getId());
     }
-
     array_push($steps,$step);
 }
 
@@ -79,7 +76,6 @@ echo "</pre>";
 
 
 
-/*
 $steps_data = array();
 
 foreach ($step_ids as $step_id) {
@@ -93,7 +89,7 @@ echo "<pre>";
 print_r($steps_data);
 echo "</pre>";
 
-*/
+
 
 
 

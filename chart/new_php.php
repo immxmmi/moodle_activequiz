@@ -41,15 +41,18 @@ foreach ($answers as $answer) {
 
 
 
-
 $steps = array();
 $step_ids = array();
 foreach ($questionattemptids as $questionattemptid) {
     $step = new attempt_steps($questionattemptid);
-    echo $step->getId();
-    array_push($step_ids,$step->getId());
+    $step = $step->getAnswerList();
+    echo "<pre>";
+    foreach ($step as $stepID) {
+        array_push($step_ids, $stepID->getId());
+    }
     array_push($steps,$step);
 }
+
 
 
 $steps_data = new attempt_step_data($steps);
