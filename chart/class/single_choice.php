@@ -24,9 +24,6 @@ class single_choice
             $this->data = $this->addValue($this->data, $responsesummary);
         }
 
-
-        echo "console.log('sss')";
-
         $this->labels = array_keys($this->data);
         $this->values = array_values($this->data);
 

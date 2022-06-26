@@ -45,18 +45,19 @@
     $single = new single_choice();
     $trueFalse = new true_false_choice();
     $data = null;
+    $msg = $steps_data;
 
     switch ($questionType) {
         case "singel":
             $single->load_quiz_data($answers,$steps_data);
-            $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues());
+            $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues(), $msg);
             break;
         case "true/false":
             $trueFalse->setData($answers[0]);
-            $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues());
+            $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues(), $msg);
         default:
             $chart->setInfo("no Question Type Found!");
-            $data = $chart->build_new_chart(null, null, null);
+            $data = $chart->build_new_chart(null, null, null, null);
     }
 
     http_response_code($chart->getResponseCode());

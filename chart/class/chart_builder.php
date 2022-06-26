@@ -17,7 +17,7 @@ class chart_builder
     }
 
     //CREATE NEW CHART RETURN JSON
-    public function build_new_chart($chartType, $labels, $values)
+    public function build_new_chart($chartType, $labels, $values, $msg)
     {
         $this->chartType = $chartType;
 
@@ -77,7 +77,7 @@ class chart_builder
                         'animateScale' => true
                     )
                 );
-                $this->msg .= "";
+                $this->msg .= $msg;
                 break;
             default:
                 $this->response_code = 404;
