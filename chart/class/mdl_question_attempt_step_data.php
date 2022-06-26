@@ -9,7 +9,7 @@ class attempt_step_data
     private $id;
     private $attemptstepid;
     private $name;
-    private $value = array();
+    private $value;
     private $answer;
 
 
@@ -24,7 +24,7 @@ class attempt_step_data
         echo"<pre>";
         print_r($step_data);
         echo"</pre>";
-        /*
+
                 foreach ($step_data as $data) {
                     $this->id = $data->id;
                     $this->attemptstepid = $data->attemptstepid;
@@ -32,7 +32,7 @@ class attempt_step_data
                     $this->value = $data->value;
                     $this->answer = $data->answer;
                 }
-        */
+
     }
 
 
