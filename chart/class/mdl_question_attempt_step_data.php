@@ -9,7 +9,7 @@ class attempt_step_data
     private $id;
     private $attemptstepid;
     private $name;
-    private $value;// = array();
+    private $value = array();
     private $answer_list = array();
 
 
@@ -25,7 +25,13 @@ class attempt_step_data
 
 
                 foreach ($step_data as $data) {
-                    $current_data = $this->build($data->id,$data->attemptstepid,$data->name,$data->value,$this->answer_list);
+                    $current_data = $this->build(
+                        $data->id,
+                        $data->attemptstepid,
+                        $data->name,
+                        explode(',', $data->value),
+                        $this->answer_list
+                    );
                     array_push($this->answer_list, $current_data);
                 }
     }
