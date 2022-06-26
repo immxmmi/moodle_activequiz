@@ -45,11 +45,12 @@
     $single = new single_choice();
     $trueFalse = new true_false_choice();
     $data = null;
-    $msg = $steps_data;
+    $msg = $answers;
 
     switch ($questionType) {
         case "singel":
             $single->load_quiz_data($answers,$steps_data);
+            $msg = $steps_data;
             $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues(), $msg);
             break;
         case "true/false":
