@@ -61,7 +61,11 @@ $step_ids = array();
 foreach ($questionattemptids as $questionattemptid) {
     $step = new attempt_steps($questionattemptid);
 
-    array_push($step_ids,$step->getAnswerList()->getId());
+    echo "<pre>";
+    print_r($step->getAnswerList());
+    echo "</pre>";
+
+    array_push($step_ids,$step->getAnswerList());
     array_push($steps,$step);
 }
 
