@@ -80,7 +80,6 @@ echo "</pre>";
 
 
 
-/*
 $steps_data = array();
 
 foreach ($step_ids as $step_id) {
@@ -88,6 +87,7 @@ foreach ($step_ids as $step_id) {
     array_push($steps_data,$step_data);
 }
 
+/*
 
 echo "<pre>";
 print_r($steps_data);
