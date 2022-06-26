@@ -23,6 +23,7 @@ class attempt_step_data
         $step_id = $step->getId();
         $questionattemptid = $step->getQuestionattemptid();
 
+        echo $questionattemptid;
 
 
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_step_data" WHERE attemptstepid = :attemptstepid';
