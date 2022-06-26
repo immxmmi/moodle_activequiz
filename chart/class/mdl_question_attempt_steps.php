@@ -23,16 +23,19 @@ class attempt_steps
                 $params = array('questionattemptid' => $questionattemptid);
                 $result = $DB->get_records_sql($sql, $params);
 
-                        $this->id=$result->id;
-                        $this->questionattemptid=$result->questionattemptid;
-                        $this->sequencenumber=$result->sequencenumber;
-                        $this->state=$result->state;
-                        $this->fraction=$result->fraction;
-                        $this->timecreated=$result->timecreated;
-                        $this->userid=$result->userid;
-      }
+
+                foreach ($result as $answer) {
+                        $this->id=$answer->id;
+                        $this->questionattemptid=$answer->questionattemptid;
+                        $this->sequencenumber=$answer->sequencenumber;
+                        $this->state=$answer->state;
+                        $this->fraction=$answer->fraction;
+                        $this->timecreated=$answer->timecreated;
+                        $this->userid=$answer->userid;
+                }
 
 
+            }
 
 
     private function builder($id, $questionattemptid, $sequencenumber, $state, $fraction, $timecreated, $userid, array $answer_list)
