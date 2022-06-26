@@ -73,7 +73,7 @@ foreach ($answers as $answer) {
 $steps = array();
 foreach ($questionattemptids as $questionattemptid) {
 
-    echo $questionattemptid;
+
     // $step = new attempt_steps("".$questionattemptid);
     /*
     array_push($steps,$step);
