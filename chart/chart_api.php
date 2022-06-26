@@ -1,77 +1,100 @@
 <?php
-require_once("../../../config.php");
-require_once("class/mdl_activequiz_sessions.php");
-require_once("class/mdl_activequiz_attempt.php");
-require_once("class/mdl_question_attempts.php");
-require_once("class/mdl_question_attempt_steps.php");
-require_once("class/mdl_question_attempt_step_data.php");
-require_once("class/chart_builder.php");
-require_once("class/single_choice.php");
-require_once("class/truefalsechoice.php");
-global $DB;
+    require_once("../../../config.php");
+    require_once("class/mdl_activequiz_sessions.php");
+    require_once("class/mdl_activequiz_attempt.php");
+    require_once("class/mdl_question_attempts.php");
+    require_once("class/mdl_question_attempt_steps.php");
+    require_once("class/mdl_question_attempt_step_data.php");
+    require_once("class/chart_builder.php");
+    require_once("class/single_choice.php");
+    require_once("class/multi_choice.php");
+    require_once("class/truefalsechoice.php");
 
-// Parameter
-$charttype = optional_param('type', false, PARAM_TEXT); //
-$sessionid = optional_param('sessionid', false, PARAM_TEXT); //$sessionID = 46;
-$chart = new chart_builder();
+    global $DB;
 
-# # # # # # # # -SESSION- # # # # # # # #
-$session = new activequiz_session($sessionid);
-##########################################
+    // Parameter
+    $charttype = "bar";//optional_param('type', false, PARAM_TEXT); //
+    $sessionid = 30;//optional_param('sessionid', false, PARAM_TEXT); //$sessionID = 46;
+    //$chart = new chart_builder();
 
-# # # # # # # #  -ACTIVE-QUIZ ATTEMPTS- # # # # # # # #
-$activequiz_attempt = new activequiz_attempt($sessionid);
-$allquestionengids = $activequiz_attempt->getAllQuestionengids();
-#######################################################
+    # # # # # # # # -SESSION- # # # # # # # #
+    $session = new activequiz_session($sessionid);
+    ##########################################
 
-# # # # # # # #  -QUESTION ATTEMPTS- # # # # # # # #
-$slot = $session->getCurrentquestion(); // SLOT
-// $slot = optional_param('slot', false, PARAM_TEXT); //; // SLOT
-$question_attemp = new question_attempts($allquestionengids, $slot);
-#####################################################
-
-$answers = $question_attemp->getListOfAnswers();
+    # # # # # # # #  -ACTIVE-QUIZ ATTEMPTS- # # # # # # # #
+    $activequiz_attempt = new activequiz_attempt($sessionid);
+    $allquestionengids = $activequiz_attempt->getAllQuestionengids();
 
 
-// LISTE OF questionattemptids
-$questionattemptids = array();
-foreach ($answers as $answer) {
-    array_push($questionattemptids, $answer[0]->getId());
-}
+    $slot = $session->getCurrentquestion(); // SLOT
+
+    $question_attemp = new question_attempts($allquestionengids, $slot);
+
+    /*
+    echo "<pre>";
+    print_r($question_attemp);
+    echo "</pre>";
+    */
 
 
+    $answers = $question_attemp->getListOfAnswers();
 
-$steps = array();
-$step_ids = array();
-foreach ($questionattemptids as $questionattemptid) {
-    $step = new attempt_steps($questionattemptid);
-    $step = $step->getAnswerList();
-    foreach ($step as $stepID) {
-        array_push($step_ids, $stepID->getId());
+    /*
+    echo "<pre>";
+    print_r($answers);
+    echo "</pre>";
+    */
+
+    // LISTE OF questionattemptids
+    $questionattemptids = array();
+    foreach ($answers as $answer) {
+        array_push($questionattemptids, $answer[0]->getId());
     }
-    array_push($steps,$step);
-}
 
 
-$steps_data = array();
+    $steps = array();
+    $step_ids = array();
+    foreach ($questionattemptids as $questionattemptid) {
+        $step = new attempt_steps($questionattemptid);
+        $step = $step->getAnswerList();
+        echo "<pre>";
+        foreach ($step as $stepID) {
+            array_push($step_ids, $stepID->getId());
+        }
+        array_push($steps, $step);
+    }
 
-foreach ($step_ids as $step_id) {
-    $step_data = new attempt_step_data($step_id);
-    array_push($steps_data,$step_data);
-}
+
+    echo "<pre>";
+    print_r($step_ids);
+    echo "</pre>";
+
+
+    $steps_data = array();
+
+    foreach ($step_ids as $step_id) {
+        $step_data = new attempt_step_data($step_id);
+        array_push($steps_data, $step_data);
+    }
+
+
+    echo "<pre>";
+    print_r($steps_data);
+    echo "</pre>";
 
 
 
 
 
-/*
 
-echo "<pre>";
-print_r($steps);
-echo "</pre>";
-//$steps = $steps->getAttemptstepids();
+    /*
 
-*/
+    echo "<pre>";
+    print_r($steps);
+    echo "</pre>";
+    //$steps = $steps->getAttemptstepids();
+
+    */
 
     #######################################################
 
