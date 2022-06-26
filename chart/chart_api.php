@@ -72,7 +72,7 @@ foreach ($answers as $qA) {
 */
 
     print_r($qA);
-
+break;
 }
 
 
