@@ -24,8 +24,13 @@
     echo "</pre>";
 
     # # # # # # # #  -ACTIVE-QUIZ ATTEMPTS- # # # # # # # #
-   /*
     $activequiz_attempt = new activequiz_attempt($sessionid);
+echo "<pre>";
+print_r($activequiz_attempt);
+echo "</pre>";
+
+
+    /*
     $allquestionengids = $activequiz_attempt->getAllQuestionengids();
     #######################################################
 
