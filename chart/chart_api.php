@@ -52,17 +52,7 @@ echo "</pre>";
 
 $list_of_question_attempts_id = array();
 
-foreach ($question_attemp as $qA) {
 
-    /*
-    echo $qA[0]->getId();
-    //  array_push($list_of_question_attempts_id, $qA->getId());
-*/
-    echo "<pre>";
-    //print_r($qA->getQuestionsummary());
-    echo "</pre>";
-
- }
 
 
 $answers = $question_attemp->getListOfAnswers();
@@ -71,6 +61,24 @@ $answers = $question_attemp->getListOfAnswers();
 echo "<pre>";
 print_r($answers);
 echo "</pre>";
+
+
+
+foreach ($answers as $qA) {
+
+    /*
+    echo $qA[0]->getId();
+    //  array_push($list_of_question_attempts_id, $qA->getId());
+*/
+    echo "<pre>";
+    print_r($qA->getId());
+    echo "</pre>";
+
+}
+
+
+
+
 
 /*
 $steps = new attempt_steps($answers);
