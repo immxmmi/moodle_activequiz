@@ -70,12 +70,12 @@ foreach ($questionattemptids as $questionattemptid) {
 }
 
 
-
+/*
 
 echo "<pre>";
 print_r($step_ids);
 echo "</pre>";
-
+*/
 
 
 /*
