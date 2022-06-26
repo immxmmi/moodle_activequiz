@@ -28,12 +28,6 @@ class attempt_step_data
                 $params = array('attemptstepid' => $step_id);
                 $step_data = $DB->get_records_sql($sql, $params);
 
-            echo "<pre>";
-            print_r($step_data);
-            echo "</pre>";
-
-
-                /*
 
                 foreach ($step_data as $data) {
                     $current_data = $this->build(
@@ -47,7 +41,6 @@ class attempt_step_data
                     array_push($this->answer_list, $current_data);
                 }
 
-            */
         }
 
 
