@@ -22,6 +22,7 @@ class attempt_steps
 
 
                 foreach ($result as $answer) {
+                    echo $this->id=$answer->id;
                         $this->id=$answer->id;
                         $this->questionattemptid=$answer->questionattemptid;
                         $this->sequencenumber=$answer->sequencenumber;
