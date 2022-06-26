@@ -9,7 +9,7 @@ class attempt_step_data
     private $id;
     private $attemptstepid;
     private $name;
-    private $value = array();
+    private $value;
 
 
 
