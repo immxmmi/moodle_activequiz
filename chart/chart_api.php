@@ -20,7 +20,7 @@
     ##########################################
 
     echo "<pre>";
-    echo "print_r(".$session.")";
+    print_r($session);
     echo "</pre>";
 
     # # # # # # # #  -ACTIVE-QUIZ ATTEMPTS- # # # # # # # #
