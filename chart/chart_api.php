@@ -60,7 +60,7 @@ $steps = array();
 $step_ids = array();
 foreach ($questionattemptids as $questionattemptid) {
     $step = new attempt_steps($questionattemptid);
-    array_push($step_ids,$step[0]->getId());
+    array_push($step_ids,$step->getId());
     array_push($steps,$step);
 }
 
