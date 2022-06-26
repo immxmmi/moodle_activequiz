@@ -50,7 +50,6 @@ print_r($question_attemp);
 echo "</pre>";
 
 
-$list_of_question_attempts_id = array();
 
 
 
@@ -63,15 +62,18 @@ print_r($answers);
 echo "</pre>";
 
 
+// LISTE OF questionattemptids
+$questionattemptids = array();
+foreach ($answers as $answer) {
+    array_push($questionattemptids, $answer[0]->getId());
+}
 
-foreach ($answers as $qA) {
 
-    /*
-    echo $qA[0]->getId();
-    //  array_push($list_of_question_attempts_id, $qA->getId());
-*/
 
-    echo $qA[0]->getId();
+$steps = array();
+foreach ($questionattemptids as $questionattemptid) {
+    $step = new attempt_steps($questionattemptid);
+    array_push($steps,$step);
 }
 
 
@@ -79,7 +81,6 @@ foreach ($answers as $qA) {
 
 
 /*
-$steps = new attempt_steps($answers);
 
 echo "<pre>";
 print_r($steps);

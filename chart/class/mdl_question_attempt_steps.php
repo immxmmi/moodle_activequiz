@@ -84,6 +84,16 @@ class attempt_steps
         return $this->answer_list;
     }
 
+    /**
+     * @param array $attemptstepids
+     */
+
+    public function setAttemptstepids($attemptstepids)
+    {
+        $this->attemptstepids = $attemptstepids;
+    }
+
+
 
 
 }
