@@ -10,40 +10,25 @@ class attempt_step_data
     private $attemptstepid;
     private $name;
     private $value;
-    private $answer_list = array();
     private $answer;
 
-    private $step_data_list = array();
 
-    public function __construct($steps_attempts)
+    public function __construct($step_id)
     {
         global $DB;
-        if ($steps_attempts !== null) {
-
-            foreach ($steps_attempts as $step) {
 
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_step_data" WHERE attemptstepid = :attemptstepid';
-                $params = array('attemptstepid' => $step->getId());
+                $params = array('attemptstepid' => $step_id);
                 $step_data = $DB->get_records_sql($sql, $params);
                 foreach ($step_data as $data) {
-                    $current_data = $this->build($data->id,$data->attemptstepid,$data->name,$data->value,$step->getAnswerList());
-                    array_push($this->step_data_list, $current_data);
+                    $this->id = $data->id;
+                    $this->attemptstepid = $data->attemptstepid;
+                    $this->name = $data->name;
+                    $this->value = $data->value;
+                    $this->answer = $data->answer;
                 }
-            }
-        }
     }
 
-    private function build($id, $attemptstepid, $name, $value, array $answer_list)
-    {
-        $currentStep = new attempt_step_data(null);
-        $currentStep->id = $id;
-        $currentStep->attemptstepid = $attemptstepid;
-        $currentStep->name = $name;
-        $currentStep->value = $value;
-        $currentStep->answer_list = $answer_list;
-        $currentStep->answer = $answer_list[$currentStep->value];
-        return $currentStep;
-    }
 
     /**
      * @return mixed
