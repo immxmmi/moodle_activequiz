@@ -54,12 +54,15 @@ $list_of_question_attempts_id = array();
 
 foreach ($question_attemp as $qA) {
 
+    /*
     echo $qA[0]->getId();
     //  array_push($list_of_question_attempts_id, $qA->getId());
-}
+*/
     echo "<pre>";
-    print_r($list_of_question_attempts_id);
+    print_r($qA);
     echo "</pre>";
+
+ }
 
 
 $answers = $question_attemp->getListOfAnswers();
