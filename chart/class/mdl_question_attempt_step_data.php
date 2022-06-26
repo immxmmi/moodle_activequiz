@@ -16,7 +16,6 @@ class attempt_step_data
     {
         print_r($step);
 
-        /*
         $step_id = $step->getId();
         global $DB;
 
