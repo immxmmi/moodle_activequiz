@@ -52,7 +52,7 @@
             $single->load_quiz_data($answers,$steps_data);
             $msg =  $answers[1][0];
             $msg .=  "-";
-            $msg .=  $answers[0][0];
+            //$msg .=  $answers[0][0];
             $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues(), $msg);
             break;
         case "true/false":
