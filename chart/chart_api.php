@@ -12,7 +12,7 @@
 
     // Parameter
     $charttype = "bar";//optional_param('type', false, PARAM_TEXT); //
-    $sessionid = 29;//optional_param('sessionid', false, PARAM_TEXT); //$sessionID = 46;
+    $sessionid = 30;//optional_param('sessionid', false, PARAM_TEXT); //$sessionID = 46;
     //$chart = new chart_builder();
 
     # # # # # # # # -SESSION- # # # # # # # #
