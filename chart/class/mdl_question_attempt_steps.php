@@ -22,7 +22,7 @@ class attempt_steps
 
             //foreach ($answers as $questionattemptid) {
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_steps" WHERE questionattemptid = :questionattemptid';
-                $params = array('questionattemptid' => $questionattemptid[0]->getid());
+                $params = array('questionattemptid' => $questionattemptid);
                 $result = $DB->get_records_sql($sql, $params);
 
         echo "<pre>";
