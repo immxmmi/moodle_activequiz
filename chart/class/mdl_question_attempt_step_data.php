@@ -14,8 +14,10 @@ class attempt_step_data
 
     public function __construct($step)
     {
+        echo "<pre>";
         print_r($step);
-
+        echo "</pre>";
+/*
         $step_id = $step->getId();
         global $DB;
 
@@ -34,6 +36,8 @@ class attempt_step_data
                     );
                     array_push($this->answer_list, $current_data);
                 }
+
+*/
 
     }
 
