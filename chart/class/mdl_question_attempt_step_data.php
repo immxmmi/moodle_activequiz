@@ -10,7 +10,7 @@ class attempt_step_data
     private $attemptstepid;
     private $name;
     private $value = "";
-    private $answer;
+    private $answer = "";
 
 
     public function __construct($step_id)
@@ -21,19 +21,13 @@ class attempt_step_data
                 $params = array('attemptstepid' => $step_id);
                 $step_data = $DB->get_records_sql($sql, $params);
 
-       //echo"<pre>";
-       //print_r($step_data);
-       //echo"</pre>";
-
                 foreach ($step_data as $data) {
                     $this->id = $data->id;
                     $this->attemptstepid = $data->attemptstepid;
                     $this->name = $data->name;
-                    var_dump($data->value);
                     $this->value = $data->value;
-                    //$this->answer = $data->answer;
+                    $this->answer = $data->answer;
                 }
-
     }
 
 
