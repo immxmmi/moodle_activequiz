@@ -59,7 +59,7 @@ foreach ($question_attemp as $qA) {
     //  array_push($list_of_question_attempts_id, $qA->getId());
 */
     echo "<pre>";
-    print_r($qA->getId());
+    print_r($qA->getQuestionsummary());
     echo "</pre>";
 
  }
