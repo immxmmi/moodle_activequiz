@@ -30,10 +30,15 @@ print_r($activequiz_attempt);
 echo "</pre>";
 
 
-    /*
     $allquestionengids = $activequiz_attempt->getAllQuestionengids();
-    #######################################################
 
+echo "<pre>";
+print_r($allquestionengids);
+echo "</pre>";
+
+#######################################################
+
+/*
      # # # # # # # #  -QUESTION ATTEMPTS- # # # # # # # #
     $slot = $session->getCurrentquestion(); // SLOT
    // $slot = optional_param('slot', false, PARAM_TEXT); //; // SLOT
