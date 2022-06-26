@@ -35,7 +35,7 @@ class attempt_step_data
                         $data->attemptstepid,
                         $data->name,
                         explode(',', $data->value),
-                            $step->getQuestionattemptid(),
+                            "$step->getQuestionattemptid()",
                         $this->answer_list
                     );
                     array_push($this->answer_list, $current_data);
