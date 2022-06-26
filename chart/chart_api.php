@@ -57,7 +57,7 @@ echo "<pre>";
 print_r($answers);
 echo "</pre>";
 
-
+/*
 $steps = new attempt_steps($answers);
 
 echo "<pre>";
@@ -65,7 +65,7 @@ print_r($steps);
 echo "</pre>";
 //$steps = $steps->getAttemptstepids();
 
-
+*/
 
 #######################################################
 
