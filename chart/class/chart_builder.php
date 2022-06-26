@@ -43,7 +43,7 @@ class chart_builder
                         )
                     )
                 );
-                $this->msg = json_encode($msg2);
+               // $this->msg = json_encode($msg2[);
                 break;
             case 'pie':
                 $this->data = array(
