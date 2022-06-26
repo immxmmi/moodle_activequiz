@@ -7,6 +7,7 @@ require_once("class/mdl_question_attempt_steps.php");
 require_once("class/mdl_question_attempt_step_data.php");
 require_once("class/chart_builder.php");
 require_once("class/single_choice.php");
+require_once("class/multi_choice.php");
 require_once("class/truefalsechoice.php");
 global $DB;
 
@@ -73,6 +74,8 @@ $trueFalse = new true_false_choice();
 $data = null;
 $msg = $answers;
 
+
+/*
 switch ($questionType) {
     case "singel":
         $single->load_quiz_data($answers,$steps_data);
@@ -98,7 +101,7 @@ switch ($questionType) {
 http_response_code($chart->getResponseCode());
 header('Content-Type: application/json');
 
-/*
+
 echo json_encode($data, JSON_PRETTY_PRINT);
 exit;
 
