@@ -10,6 +10,7 @@ class attempt_step_data
     private $attemptstepid;
     private $name;
     private $value = array();
+    private $answer_list = array();
 
 
 
@@ -22,14 +23,17 @@ class attempt_step_data
                 $params = array('attemptstepid' => $step_id);
                 $step_data = $DB->get_records_sql($sql, $params);
 
+
                 foreach ($step_data as $data) {
-                    $this->id = $data->id;
-                    $this->attemptstepid = $data->attemptstepid;
-                    $this->name = $data->name;
-                    $this->value = explode(',', $data->value);
+                    $currentstep = $this->builder(
+                        $data->id,
+                        $data->attemptstepid,
+                        $data->name,
+                        explode(',', $data->value),
+                        $this->answer_list);
+                    array_push($this->answer_list, $currentstep);
                 }
     }
-
 
 
     private function build($id, $attemptstepid, $name, $value, array $answer_list)
