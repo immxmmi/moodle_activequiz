@@ -50,9 +50,15 @@
     switch ($questionType) {
         case "singel":
             $single->load_quiz_data($answers,$steps_data);
-            //$msg =  "-";
-            $msg =  $answers[1][0];
-          //  $msg .=  $answers[0][0];
+            $msg =  "";
+
+
+            foreach ($steps_data as $summary) {
+                $responsesummary = $summary->getAnswer();
+                $msg .=  $summary;
+            }
+
+
             $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues(), $msg);
             break;
         case "true/false":
