@@ -60,10 +60,6 @@ foreach ($question_attemp as $qA) {
 }
 
 
-
-}
-
-
 $answers = $question_attemp->getListOfAnswers();
 
 
