@@ -9,8 +9,8 @@ class attempt_step_data
     private $id;
     private $attemptstepid;
     private $name;
-    private $value = "";
-    private $answer;
+    private $value;
+
 
 
     public function __construct($step_id)
@@ -26,9 +26,6 @@ class attempt_step_data
                     $this->attemptstepid = $data->attemptstepid;
                     $this->name = $data->name;
                     $this->value = $data->value;
-                    if ($data->answer != NULL){
-                         $this->answer = $data->answer;
-                    }
                 }
     }
 
@@ -71,22 +68,6 @@ class attempt_step_data
     public function getStepDataList()
     {
         return $this->step_data_list;
-    }
-
-    /**
-     * @return array
-     */
-    public function getAnswerList()
-    {
-        return $this->answer_list;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAnswer()
-    {
-        return $this->answer;
     }
 
 
