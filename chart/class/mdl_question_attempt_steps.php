@@ -21,8 +21,8 @@ class attempt_steps
         if ($answers !== null) {
 
             foreach ($answers as $questionattemptid) {
-                $sql = 'SELECT * FROM "public"."mdl_question_attempt_steps" WHERE questionattemptid = :questionattemptid AND sequencenumber != :sequencenumber';
-                $params = array('questionattemptid' => $questionattemptid[0]->getid(), 'sequencenumber' => 0);
+                $sql = 'SELECT * FROM "public"."mdl_question_attempt_steps" WHERE questionattemptid = :questionattemptid';
+                $params = array('questionattemptid' => $questionattemptid[0]->getid());
                 $result = $DB->get_records_sql($sql, $params);
 
                 foreach ($result as $answer) {
