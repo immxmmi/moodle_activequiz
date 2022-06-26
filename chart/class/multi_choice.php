@@ -14,7 +14,7 @@ class multi_choice
     {
 
         echo "<pre>";
-        print_r($steps_data);
+        print_r($steps_data[1]);
         echo "</pre>";
 
 
@@ -37,6 +37,13 @@ class multi_choice
 */
         return $this->data;
     }
+
+
+    private function filterAnswer($steps_data){
+            echo test;
+    }
+
+
 
     private function addValue($data, $responsesummary)
     {
