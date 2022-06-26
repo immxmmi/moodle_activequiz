@@ -14,7 +14,7 @@ class multi_choice
     {
 
         echo "<pre>";
-        print_r($steps_data[1]);
+        print_r($steps_data[2]);
         echo "</pre>";
 
 
