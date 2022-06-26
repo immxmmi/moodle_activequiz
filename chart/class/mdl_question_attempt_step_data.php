@@ -6,13 +6,13 @@ global $DB;
 class attempt_step_data
 {
     private $id;
-    private $step_id;
+    private $questionattemptid;
     private $attemptstepid;
     private $name;
     private $value = array();
     private $answer_list = array();
 
-    public function __construct($step_id)
+    public function __construct($step_id, $questionattemptid)
     {
         global $DB;
 
@@ -26,21 +26,21 @@ class attempt_step_data
                         $data->attemptstepid,
                         $data->name,
                         explode(',', $data->value),
-                        $step_id,
+                        $questionattemptid,
                         $this->answer_list
                     );
                     array_push($this->answer_list, $current_data);
                 }
     }
 
-    private function build($id, $attemptstepid, $name, $value,$step_id, array $answer_list)
+    private function build($id, $attemptstepid, $name, $value,$questionattemptid, array $answer_list)
     {
         $currentStep = new attempt_step_data(null);
         $currentStep->id = $id;
         $currentStep->attemptstepid = $attemptstepid;
         $currentStep->name = $name;
         $currentStep->value = $value;
-        $currentStep->step_id = $step_id;
+        $currentStep->questionattemptid = $questionattemptid;
         $currentStep->answer_list = $answer_list;
         return $currentStep;
     }

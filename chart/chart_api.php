@@ -48,7 +48,7 @@ foreach ($questionattemptids as $questionattemptid) {
     $step = new attempt_steps($questionattemptid);
     $step = $step->getAnswerList();
     foreach ($step as $stepID) {
-        array_push($step_ids, $stepID->getId());
+        array_push($step_ids[$questionattemptid], $stepID->getId());
     }
     array_push($steps,$step);
 }
