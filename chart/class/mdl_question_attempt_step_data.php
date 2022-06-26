@@ -14,9 +14,7 @@ class attempt_step_data
 
     public function __construct($steps)
     {
-        echo "<pre>";
-        print_r($steps);
-        echo "</pre>";
+
 
 
         global $DB;
@@ -24,12 +22,18 @@ class attempt_step_data
         foreach($steps as $step){
         $step_id = $step->getId();
 
-        echo $step_id;
 
-            /*
+
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_step_data" WHERE attemptstepid = :attemptstepid';
                 $params = array('attemptstepid' => $step_id);
                 $step_data = $DB->get_records_sql($sql, $params);
+
+            echo "<pre>";
+            print_r($step_data);
+            echo "</pre>";
+
+
+                /*
 
                 foreach ($step_data as $data) {
                     $current_data = $this->build(
