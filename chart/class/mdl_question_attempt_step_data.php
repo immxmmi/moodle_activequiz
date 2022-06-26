@@ -25,13 +25,8 @@ class attempt_step_data
 
 
                 foreach ($step_data as $data) {
-                    $currentstep = $this->builder(
-                        $data->id,
-                        $data->attemptstepid,
-                        $data->name,
-                        explode(',', $data->value),
-                        $this->answer_list);
-                    array_push($this->answer_list, $currentstep);
+                    $current_data = $this->build($data->id,$data->attemptstepid,$data->name,$data->value,$this->answer_list);
+                    array_push($this->answer_list, $current_data);
                 }
     }
 
