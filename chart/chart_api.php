@@ -77,6 +77,7 @@ foreach ($questionattemptids as $questionattemptid) {
     array_push($steps,$step);
 
     */
+    echo $questionattemptid;
 }
 
 
