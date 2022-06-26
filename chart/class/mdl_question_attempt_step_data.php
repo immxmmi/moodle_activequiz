@@ -30,7 +30,7 @@ class attempt_step_data
                     $this->attemptstepid = $data->attemptstepid;
                     $this->name = $data->name;
                   //  $this->value = $data->value;
-                    $this->answer = $data->answer;
+                   // $this->answer = $data->answer;
                 }
 
     }
