@@ -34,7 +34,7 @@ class attempt_step_data
                     );
                     array_push($this->answer_list, $current_data);
                 }
-        */
+
     }
 
     private function build($id, $attemptstepid, $name, $value,$questionattemptid, array $answer_list)
