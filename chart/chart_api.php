@@ -72,7 +72,6 @@ foreach ($answers as $qA) {
 */
 
     echo $qA[0]->getId();
-break;
 }
 
 
