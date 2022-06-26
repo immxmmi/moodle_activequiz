@@ -73,4 +73,12 @@ class attempt_steps
         return $this->id;
     }
 
+    /**
+     * @return array
+     */
+    public function getAnswerList()
+    {
+        return $this->answer_list;
+    }
+
 }
