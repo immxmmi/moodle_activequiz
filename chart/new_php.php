@@ -54,12 +54,16 @@ foreach ($questionattemptids as $questionattemptid) {
 }
 
 
+$steps_data = array();
 
-$steps_data = new attempt_step_data($steps);
-$steps_data = $steps_data->getStepDataList();
+foreach ($step_ids as $step_id) {
+    $step_data = new attempt_step_data($step_id);
+    array_push($steps_data,$step_data);
+}
 
 
 
+$steps_data;
 
 $questionType = "singel";
 $single = new single_choice();

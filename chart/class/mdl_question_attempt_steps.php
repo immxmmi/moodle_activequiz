@@ -21,7 +21,6 @@ class attempt_steps
                 $params = array('questionattemptid' => $questionattemptid);
                 $result = $DB->get_records_sql($sql, $params);
 
-
                 foreach ($result as $answer) {
 
                     $currentstep = $this->builder(
@@ -52,9 +51,6 @@ class attempt_steps
         $current_step->answer_list = $answer_list;
         return $current_step;
     }
-
-
-
 
 
     /**

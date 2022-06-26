@@ -5,14 +5,11 @@ global $DB;
 
 class attempt_step_data
 {
-
     private $id;
     private $attemptstepid;
     private $name;
     private $value = array();
     private $answer_list = array();
-
-
 
     public function __construct($step_id)
     {
@@ -22,7 +19,6 @@ class attempt_step_data
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_step_data" WHERE attemptstepid = :attemptstepid';
                 $params = array('attemptstepid' => $step_id);
                 $step_data = $DB->get_records_sql($sql, $params);
-
 
                 foreach ($step_data as $data) {
                     $current_data = $this->build(
@@ -36,7 +32,6 @@ class attempt_step_data
                 }
     }
 
-
     private function build($id, $attemptstepid, $name, $value, array $answer_list)
     {
         $currentStep = new attempt_step_data(null);
@@ -47,8 +42,6 @@ class attempt_step_data
         $currentStep->answer_list = $answer_list;
         return $currentStep;
     }
-
-
 
 
     /**
@@ -90,7 +83,5 @@ class attempt_step_data
     {
         return $this->step_data_list;
     }
-
-
 
 }
