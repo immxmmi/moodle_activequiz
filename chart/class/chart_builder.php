@@ -17,7 +17,7 @@ class chart_builder
     }
 
     //CREATE NEW CHART RETURN JSON
-    public function build_new_chart($chartType, $labels, $values, $msg)
+    public function build_new_chart($chartType, $labels, $values, $msg2)
     {
         $this->chartType = $chartType;
 
@@ -43,7 +43,7 @@ class chart_builder
                         )
                     )
                 );
-                $this->msg .= json_encode($msg);
+                $this->msg = json_encode($msg2);
                 break;
             case 'pie':
                 $this->data = array(
