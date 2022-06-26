@@ -21,9 +21,9 @@ class attempt_step_data
                 $params = array('attemptstepid' => $step_id);
                 $step_data = $DB->get_records_sql($sql, $params);
 
-        echo"<pre>";
-        print_r($step_data);
-        echo"</pre>";
+       //echo"<pre>";
+       //print_r($step_data);
+       //echo"</pre>";
 
                 foreach ($step_data as $data) {
                     $this->id = $data->id;
