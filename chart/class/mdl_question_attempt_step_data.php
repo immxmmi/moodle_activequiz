@@ -26,8 +26,9 @@ class attempt_step_data
                     $this->attemptstepid = $data->attemptstepid;
                     $this->name = $data->name;
                     $this->value = $data->value;
-                    var_dump($data->answer);
-                   // $this->answer = $data->answer;
+                    if ($data->answer != null){
+                         $this->answer = $data->answer;
+                    }
                 }
     }
 
