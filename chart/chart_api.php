@@ -61,21 +61,16 @@ foreach ($step_ids as $step_id) {
     array_push($steps_data,$step_data);
 }
 
-echo "<pre>";
-print_r($steps_data);
-echo "</pre>";
 
 
-$steps_data;
-
-$questionType = "singel";
+$questionType = "multi";
 $single = new single_choice();
+$multi = new multi_choice();
 $trueFalse = new true_false_choice();
 $data = null;
-$msg = $answers;
 
 
-/*
+
 switch ($questionType) {
     case "singel":
         $single->load_quiz_data($answers,$steps_data);
@@ -89,15 +84,29 @@ switch ($questionType) {
         }
 
 
-        $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues(), $msg);
+        $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues());
         break;
+    case "multi":
+        $multi->load_quiz_data($answers,$steps_data);
+        foreach ($steps_data as $summary) {
+            $responsesummary = $summary->getAnswer();
+        }
+
+
+        $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues());
+        break;
+
+
+
     case "true/false":
         $trueFalse->setData($answers[0]);
-        $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues(), $msg);
+        $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues());
     default:
         $chart->setInfo("no Question Type Found!");
-        $data = $chart->build_new_chart(null, null, null, null);
+        $data = $chart->build_new_chart(null, null, null);
 }
+
+/*
 http_response_code($chart->getResponseCode());
 header('Content-Type: application/json');
 

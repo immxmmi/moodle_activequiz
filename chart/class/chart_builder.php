@@ -17,7 +17,7 @@ class chart_builder
     }
 
     //CREATE NEW CHART RETURN JSON
-    public function build_new_chart($chartType, $labels, $values, $msg2)
+    public function build_new_chart($chartType, $labels, $values)
     {
         $this->chartType = $chartType;
 

@@ -12,6 +12,14 @@ class multi_choice
 
     public function load_quiz_data($answers,$steps_data)
     {
+
+        echo "<pre>";
+        print_r($steps_data);
+        echo "</pre>";
+
+
+
+        /*
         $question_one = $answers[0][0];
 
         for ($i = 0; $i < sizeof($question_one->getQuestionsummary()); $i++) {
@@ -26,7 +34,7 @@ class multi_choice
 
         $this->labels = array_keys($this->data);
         $this->values = array_values($this->data);
-
+*/
         return $this->data;
     }
 
