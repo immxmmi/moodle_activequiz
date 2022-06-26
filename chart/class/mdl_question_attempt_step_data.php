@@ -25,7 +25,7 @@ class attempt_step_data
                     $this->id = $data->id;
                     $this->attemptstepid = $data->attemptstepid;
                     $this->name = $data->name;
-                    echo explode(',', $data->value);
+                    $this->value = explode(',', $data->value);
                 }
     }
 
