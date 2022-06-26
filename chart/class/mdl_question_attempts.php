@@ -31,6 +31,12 @@ class question_attempts
                 $result = $DB->get_records_sql($sql, $params);
                 $question_attemps = $this->get_attempts_by_questionengid($result);
                 echo "</br></br>QUESTION ID: ".$questionengids."</br></br>";
+
+                echo "<pre>";
+                print_r($question_attemps);
+                echo "</pre>";
+
+
                 //array_push($this->list_of_answers, $question_attemps);
             }
         }
