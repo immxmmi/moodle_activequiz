@@ -62,10 +62,14 @@ foreach ($answers as $answer) {
 
 
 $steps = array();
+$step_ids = array();
 foreach ($questionattemptids as $questionattemptid) {
     $step = new attempt_steps($questionattemptid);
+    echo $step->getId();
+    //array_push($steps,$step);
     array_push($steps,$step);
 }
+
 
 
 

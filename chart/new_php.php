@@ -41,10 +41,12 @@ foreach ($answers as $answer) {
 
 
 
+$steps = array();
+foreach ($questionattemptids as $questionattemptid) {
+    $step = new attempt_steps($questionattemptid);
+    array_push($steps,$step);
+}
 
-
-$steps = new attempt_steps($answers);
-$steps = $steps->getAttemptstepids();
 
 $steps_data = new attempt_step_data($steps);
 $steps_data = $steps_data->getStepDataList();

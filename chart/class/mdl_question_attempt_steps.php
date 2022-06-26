@@ -11,9 +11,6 @@ class attempt_steps
     private $fraction;
     private $timecreated;
     private $userid;
-    private $step_list;
-    private $attemptstepids = array();
-    private $answer_list = array();
 
     public function __construct($questionattemptid)
     {
@@ -37,22 +34,6 @@ class attempt_steps
 
             }
 
-
-    private function builder($id, $questionattemptid, $sequencenumber, $state, $fraction, $timecreated, $userid, array $answer_list)
-    {
-        $current_step = new attempt_steps(null);
-        $current_step->id = $id;
-        $current_step->questionattemptid = $questionattemptid;
-        $current_step->sequencenumber = $sequencenumber;
-        $current_step->state = $state;
-        $current_step->fraction = $fraction;
-        $current_step->timecreated = $timecreated;
-        $current_step->userid = $userid;
-        $current_step->answer_list = $answer_list;
-        return $current_step;
-    }
-
-
     /**
      * @return array
      */
@@ -68,25 +49,5 @@ class attempt_steps
     {
         return $this->id;
     }
-
-    /**
-     * @return array
-     */
-    public function getAnswerList()
-    {
-        return $this->answer_list;
-    }
-
-    /**
-     * @param array $attemptstepids
-     */
-
-    public function setAttemptstepids($attemptstepids)
-    {
-        $this->attemptstepids = $attemptstepids;
-    }
-
-
-
 
 }
