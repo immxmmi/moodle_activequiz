@@ -37,7 +37,7 @@ class question_attempts
                 echo "</pre>";
 
 
-                //array_push($this->list_of_answers, $question_attemps);
+                array_push($this->list_of_answers, $question_attemps);
             }
         }
 
