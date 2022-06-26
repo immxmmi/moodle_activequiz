@@ -39,7 +39,6 @@ class attempt_step_data
         $currentStep->name = $name;
         $currentStep->value = $value;
         $currentStep->answer_list = $answer_list;
-        $currentStep->answer = $answer_list[$currentStep->value];
         return $currentStep;
     }
 
