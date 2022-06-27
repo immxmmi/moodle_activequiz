@@ -70,7 +70,6 @@ class multi_choice
                 echo "<pre>";
                 print_r($current_user_answer);
                 echo "</pre>";
-                break;
             }
         }
 
