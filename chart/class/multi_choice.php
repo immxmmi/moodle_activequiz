@@ -98,11 +98,14 @@ class multi_choice
     }
     private function filterSelectedAnswers($list_of_user_question_data){
 
+        $answers = array();
         foreach ($list_of_user_question_data as $current_user_data){
-
-            for($i = 0; $i < sizeof($current_user_data)-1; $i++){
                 print_r($current_user_data["_order"]);
-                print_r($current_user_data["choice".$i][0]);
+            for($i = 0; $i < sizeof($current_user_data)-1; $i++){
+                $value = $current_user_data["choice".$i][0];
+                if($value){
+                    echo $i;
+                }
 
             }
 
@@ -110,6 +113,8 @@ class multi_choice
             print_r($current_user_data);
             echo "</pre>";
         }
+
+        return $answers;
     }
 
 
