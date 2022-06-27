@@ -68,12 +68,12 @@ class multi_choice
 
             $current_answer = array();
             foreach ($current_user_list as $current_user_answer) {
-                echo "<pre>";
-                print_r($current_user_answer);
-                echo "</pre>";
                 $current_answer = array_merge($current_answer,$current_user_answer);
                 //array_push($current_answer,$current_user_answer[0]);
             }
+                echo "<pre>";
+                print_r($current_answer);
+                echo "</pre>";
             break;
         }
 
