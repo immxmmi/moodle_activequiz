@@ -46,12 +46,14 @@ class multi_choice
                 array_push($rowListAnswer, $data->getAnswerList());
         }
         foreach ($rowListAnswer as $data){
+                $currentUser = array();
             foreach ($data as $step_data) {
                 $currentData = array(
-                    array($step_data->getName() => $step_data->getValue())
+                    $step_data->getName() => $step_data->getValue()
                 );
-                array_push($listAnswer, $currentData);
+                    array_push($currentUser,$currentData);
             }
+                array_push($listAnswer, $currentUser);
         }
 
         echo "<pre>";
