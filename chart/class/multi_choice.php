@@ -43,8 +43,8 @@ class multi_choice
         $listAnswer = array();
         foreach ($steps_data as $data){
             echo $data->getQuestionattemptid();
-            foreach ($data as $step_data) {
                 array_push($listAnswer, $data);
+            foreach ($data as $step_data) {
             }
             break;
         }
