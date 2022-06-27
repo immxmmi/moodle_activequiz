@@ -15,10 +15,15 @@ class single_choice
      */
     public function __construct(array $labels, $steps_data)
     {
-        print_r($steps_data);
+
         $this->labels = $labels;
         $list_user_answers = $this->filterListAnswer($steps_data);
+        echo "<pre>";
+        print_r($list_user_answers);
+        echo "<pre>";
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
+
+
         $selected_answers = $this->filterSelectedAnswers($list_of_user_question_data);
         $this->values = $this->createValueArray($selected_answers);
     }
