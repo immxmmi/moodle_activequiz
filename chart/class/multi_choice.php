@@ -42,9 +42,6 @@ class multi_choice
 
         $listAnswer = array();
         foreach ($steps_data as $data){
-            echo "<pre>";
-            print_r($data);
-            echo "</pre>";
             echo $data->getQuestionattemptid();
             array_push($listAnswer,$data);
         }
