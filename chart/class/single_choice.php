@@ -20,11 +20,8 @@ class single_choice
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
 
-
         $selected_answers = $this->filterSelectedAnswers($list_of_user_question_data);
-        echo "<pre>";
-        print_r($selected_answers);
-        echo "<pre>";
+
         $this->values = $this->createValueArray($selected_answers);
     }
 
@@ -83,6 +80,13 @@ class single_choice
     }
     private function filterSelectedAnswers($list_of_user_question_data){
         $answers = array();
+
+
+        echo "<pre>";
+        print_r($list_of_user_question_data);
+        echo "<pre>";
+
+
         foreach ($list_of_user_question_data as $current_user_data){
 
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
