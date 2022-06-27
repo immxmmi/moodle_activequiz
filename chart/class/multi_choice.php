@@ -90,6 +90,7 @@ class multi_choice
                 echo $answer->getAnswer();
             }
 
+            break;
 
         }
 
