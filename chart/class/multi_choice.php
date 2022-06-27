@@ -107,11 +107,11 @@ class multi_choice
                     //array_push($value_array,);
                 }
             }
+        }
+
             echo "<pre>";
             print_r($value_array);
             echo "<pre>";
-        }
-
         return $value_array;
     }
 
