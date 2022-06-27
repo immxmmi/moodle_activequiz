@@ -50,7 +50,7 @@ class multi_choice
         }
 
         echo "<pre>";
-        print_r($listAnswer);
+        print_r($steps_data);
         echo "</pre>";
 
 
