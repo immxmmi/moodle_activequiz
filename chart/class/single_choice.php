@@ -82,15 +82,15 @@ class single_choice
         $answers = array();
 
 
+
         echo "<pre>";
         print_r($list_of_user_question_data);
         echo "<pre>";
 
-
         foreach ($list_of_user_question_data as $current_user_data){
 
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
-                $value = $current_user_data["choice".$i][0];
+                $value = $current_user_data[$i][0];
                 if($value){
                     array_push( $answers,$current_user_data["_order"][$i]);
                 }
