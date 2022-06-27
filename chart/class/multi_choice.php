@@ -92,7 +92,7 @@ class multi_choice
 
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
 
-                if (array_key_exists($current_user_data, $current_user_data["choice".$i][0]))
+                if (array_key_exists($current_user_data, $current_user_data["answer"]))
                 {
                     echo "Found the Key";
                 }
