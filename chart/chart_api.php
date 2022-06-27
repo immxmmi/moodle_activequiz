@@ -7,7 +7,6 @@ require_once("class/database/mdl_question_attempts.php");
 require_once("class/database/mdl_question_attempt_steps.php");
 require_once("class/database/mdl_question_attempt_step_data.php");
 require_once("class/chart_builder.php");
-require_once("class/single_choice.php");
 require_once("class/multi_choice.php");
 
 global $DB;
@@ -35,6 +34,7 @@ $question_attemp = new question_attempts($allquestionengids, $slot);
 $answers = $question_attemp->getListOfAnswers();
 
 $questionid = $answers[0][0]->getQuestionid();
+
 
 
 // LISTE OF questionattemptids
@@ -80,12 +80,8 @@ $labels = $answer[0]->questionsummary;
 
 
 switch ($questionType) {
-    case "multichoice":
-        $single = new single_choice($labels,$steps_data);
-        $data = $chart->build_new_chart($charttype, $labels, $single->getValues());
-        break;
 
-    case "multichoicea":
+    case "multichoice":
         $multi = new multi_choice($labels,$steps_data);
         $data = $chart->build_new_chart($charttype, $multi->getLabels(), $multi->getValues());
         break;
@@ -95,10 +91,9 @@ switch ($questionType) {
         $data = $chart->build_new_chart(null, null, null);
 }
 
+
 http_response_code($chart->getResponseCode());
 header('Content-Type: application/json');
 
-
 echo json_encode($data, JSON_PRETTY_PRINT);
 exit;
-
