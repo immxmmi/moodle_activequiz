@@ -89,6 +89,7 @@ class multi_choice
     private function filterSelectedAnswers($list_of_user_question_data){
         $answers = array();
         foreach ($list_of_user_question_data as $current_user_data){
+
                 if (array_key_exists("answer",$current_user_data))
                 {
                     echo "Found the Key";
@@ -98,6 +99,7 @@ class multi_choice
                     echo "Key not Found";
                 }
 
+                break;
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
 
                 /*
