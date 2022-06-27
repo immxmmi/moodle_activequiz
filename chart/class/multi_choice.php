@@ -88,13 +88,9 @@ class multi_choice
 
                 if (array_key_exists("answer",$current_user_data))
                 {
-                    foreach ($list_of_user_question_data as $current_user_data) {
-
                         for ($i = 0; $i < sizeof($current_user_data) - 1; $i++) {
                             array_push($answers, $current_user_data["_order"][$current_user_data["answer"][0]]);
                         }
-
-                    }
                 }
                 else
                 {
