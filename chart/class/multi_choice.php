@@ -45,11 +45,19 @@ class multi_choice
         foreach ($steps_data as $data){
                 array_push($listAnswer, $data->getAnswerList());
         }
-        foreach ($listAnswer as $test){
-            echo "<pre>";
-            print_r($test);
-            echo "</pre>";
+        foreach ($listAnswer as $data){
+
+
+            foreach ($data as $step_data) {
+
+                echo "<pre>";
+                print_r($step_data);
+                echo "</pre>";
                 //array_push($listAnswer2, $data->getValue());
+
+                break;
+
+            }
             break;
 
         }
