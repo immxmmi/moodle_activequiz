@@ -17,7 +17,7 @@ class multi_choice
         //print_r($steps_data);
         echo "</pre>";
 
-        filterListAnswer($steps_data);
+        $this->filterListAnswer($steps_data);
 
         /*
         $question_one = $answers[0][0];
