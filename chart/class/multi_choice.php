@@ -15,11 +15,10 @@ class multi_choice
 
 
         $list_user_answers = $this->filterListAnswer($steps_data);
-        $row_value = $this->filterUserAnswerList($list_user_answers);
+        $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
+        $row_value = $this->filterOrderAndName($list_of_user_question_data);
 
-        echo "<pre>";
-        print_r($row_value);
-        echo "</pre>";
+
         /*
         $question_one = $answers[0][0];
 
@@ -77,6 +76,21 @@ class multi_choice
         return $list_of_user_order_choice;
 
     }
+
+
+    private function filterOrderAndName($list_of_user_question_data){
+
+        //$list_of_user_order_choice = array();
+
+        echo "<pre>";
+        print_r($list_of_user_question_data);
+        echo "</pre>";
+
+        //return $list_of_user_order_choice;
+
+    }
+
+
 
 
 
