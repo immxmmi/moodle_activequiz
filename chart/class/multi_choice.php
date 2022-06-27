@@ -98,15 +98,16 @@ class multi_choice
     private function createValueArray($values)
     {
         $value_array = array();
+        $counter = 0;
         foreach ($this->labels as $currentLabel){
+            array_push($value_array,0);
             foreach ($values as $value){
 
                 if(ltrim($currentLabel) === ltrim($value) ){
-
-                var_dump(ltrim($currentLabel));
-                var_dump(ltrim($value));
+                    //array_push($value_array,);
                 }
             }
+            print_r($value_array);
         }
 
         return $value_array;
