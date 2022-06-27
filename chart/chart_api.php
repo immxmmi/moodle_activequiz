@@ -80,12 +80,12 @@ $labels = $answer[0]->questionsummary;
 
 
 switch ($questionType) {
-    case "multichoice":
+    case "multichoicea":
         $single = new single_choice($labels,$steps_data);
         $data = $chart->build_new_chart($charttype, $labels, $single->getValues());
         break;
 
-    case "multichoicea":
+    case "multichoice":
         $multi = new multi_choice($labels,$steps_data);
         $data = $chart->build_new_chart($charttype, $multi->getLabels(), $multi->getValues());
         break;
