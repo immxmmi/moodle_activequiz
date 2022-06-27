@@ -68,7 +68,7 @@ foreach ($steps as $step) {
 
 $questionType = "multi";
 $single = new single_choice();
-$multi = new multi_choice();
+
 $trueFalse = new true_false_choice();
 $data = null;
 
@@ -96,7 +96,7 @@ switch ($questionType) {
 
 
     case "multi":
-        $multi->load_quiz_data($labels,$steps_data);
+        $multi = new multi_choice($labels,$steps_data);
 
        // $data = $chart->build_new_chart($charttype, $labels, $single->getValues());
         break;

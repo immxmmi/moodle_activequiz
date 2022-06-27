@@ -9,38 +9,22 @@ class multi_choice
 
     private $labels = array();
     private $values = array();
-    private $data = array();
 
-    public function load_quiz_data($labels,$steps_data)
+    /**
+     * @param array $labels
+     * @param array $steps_data
+     */
+    public function __construct(array $labels, $steps_data)
     {
         $this->labels = $labels;
-
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
         $selected_answers = $this->filterSelectedAnswers($list_of_user_question_data);
         $this->values = $this->createValueArray($selected_answers);
 
 
-
-
-
-
-/*
-        for ($i = 0; $i < sizeof($question_one->getQuestionsummary()); $i++) {
-            $current_data = array($question_one->getQuestionsummary()[$i]=>0);
-            $this->data = array_merge($this->data, $current_data);
-        }
-        foreach ($steps_data as $summary) {
-            $responsesummary = $summary->getAnswer();
-            $this->data = $this->addValue($this->data, $responsesummary);
-        }
-*/
-
-        $this->labels = array_keys($this->data);
-        $this->values = array_values($this->data);
-
-        return $this->data;
     }
+
 
     private function filterListAnswer($steps_data){
 
