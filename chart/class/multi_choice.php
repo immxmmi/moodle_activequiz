@@ -66,10 +66,12 @@ class multi_choice
 
         foreach ($list_user_answers as $current_user_list) {
 
+            $current_answer = array();
             foreach ($current_user_list as $current_user_answer) {
                 echo "<pre>";
-                print_r($current_user_answer);
+                print_r($current_user_answer[0]);
                 echo "</pre>";
+                //array_push($current_answer,$current_user_answer[0]);
             }
             break;
         }
