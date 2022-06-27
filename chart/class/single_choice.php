@@ -15,6 +15,7 @@ class single_choice
      */
     public function __construct(array $labels, $steps_data)
     {
+        rint_r($steps_data);
         $this->labels = $labels;
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
@@ -80,14 +81,10 @@ class single_choice
         foreach ($list_of_user_question_data as $current_user_data){
 
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
-
-                print_r($current_user_data);
-
                 $value = $current_user_data["choice".$i][0];
                 if($value){
                     array_push( $answers,$current_user_data["_order"][$i]);
                 }
-
 
             }
 
