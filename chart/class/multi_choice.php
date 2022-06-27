@@ -41,8 +41,12 @@ class multi_choice
     private function filterListAnswer($steps_data){
 
         $listAnswer = array();
+        $listAnswer2 = array();
         foreach ($steps_data as $data){
                 array_push($listAnswer, $data->getAnswerList());
+        }
+        foreach ($listAnswer as $data){
+                array_push($listAnswer2, reset($data->getAnswerList()));
         }
 
         echo "<pre>";
