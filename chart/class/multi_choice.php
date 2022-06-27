@@ -48,7 +48,7 @@ class multi_choice
         }
 
         echo "<pre>";
-        print_r($listAnswer->getAnswerList());
+        print_r($listAnswer[0]->getAnswerList());
         echo "</pre>";
 
 
