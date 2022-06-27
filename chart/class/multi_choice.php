@@ -99,6 +99,9 @@ class multi_choice
     {
         $value_array = array();
         $counter = 0;
+        echo "<pre>";
+        print_r($this->labels);
+        echo "<pre>";
         foreach ($this->labels as $currentLabel){
             array_push($value_array,0);
             foreach ($values as $value){
