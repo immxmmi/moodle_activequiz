@@ -15,14 +15,16 @@ class multi_choice
     {
         $this->labels = $labels;
 
-        print_r($this->labels);
-
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
+        $selected_answer = $this->filterSelectedAnswers($list_of_user_question_data);
 
-        echo "<pre>";
-        print_r($list_of_user_question_data);
-        echo "</pre>";
+  ;
+
+
+
+
+
         /*
         $question_one = $answers[0][0];
 
@@ -94,7 +96,14 @@ class multi_choice
         return $list_of_user_order_choice;
 
     }
+    private function filterSelectedAnswers($list_of_user_question_data){
 
+        foreach ($list_of_user_question_data as $current_user_data){
+            echo "<pre>";
+            print_r($current_user_data);
+            echo "</pre>"
+        }
+    }
 
 
 
