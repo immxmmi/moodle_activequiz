@@ -19,15 +19,7 @@ class multi_choice
         $this->labels = $labels;
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
-
         $selected_answers = $this->filterSelectedAnswers($list_of_user_question_data);
-
-
-        echo "<pre>";
-        print_r($selected_answers);
-        echo "<pre>";
-
-
         $this->values = $this->createValueArray($selected_answers);
     }
 
