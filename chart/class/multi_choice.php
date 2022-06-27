@@ -104,7 +104,7 @@ class multi_choice
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
                 $value = $current_user_data["choice".$i][0];
                 if($value){
-                    echo $i;
+                    echo $current_user_data["_order"][$i];
                 }
 
             }
