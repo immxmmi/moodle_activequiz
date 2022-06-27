@@ -19,7 +19,19 @@ class multi_choice
         $this->labels = $labels;
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
-        $selected_answers = $this->filterSelectedAnswers($list_of_user_question_data);
+
+        if(true){
+
+        $selected_answers = $this->filterSelectedAnswersMulti($list_of_user_question_data);
+        }else{
+            $selected_answers = $this->filterSelectedAnswersSingle($list_of_user_question_data);
+        }
+
+        echo "<pre>";
+        print_r($selected_answers);
+        echo "<pre>";
+
+
         $this->values = $this->createValueArray($selected_answers);
     }
 
@@ -76,7 +88,7 @@ class multi_choice
         return $list_of_user_order_choice;
 
     }
-    private function filterSelectedAnswers($list_of_user_question_data){
+    private function filterSelectedAnswersMulti($list_of_user_question_data){
         $answers = array();
         foreach ($list_of_user_question_data as $current_user_data){
 
@@ -91,6 +103,20 @@ class multi_choice
 
         return $answers;
     }
+    private function filterSelectedAnswersSingle($list_of_user_question_data)
+    {
+        $answers = array();
+
+        foreach ($list_of_user_question_data as $current_user_data) {
+
+            for ($i = 0; $i < sizeof($current_user_data) - 1; $i++) {
+                array_push($answers, $current_user_data["_order"][$current_user_data["answer"][0]]);
+            }
+
+        }
+        return $answers;
+    }
+
 
 
     private function createValueArray($values)
