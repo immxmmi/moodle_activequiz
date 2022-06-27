@@ -99,6 +99,11 @@ class multi_choice
     private function filterSelectedAnswers($list_of_user_question_data){
 
         foreach ($list_of_user_question_data as $current_user_data){
+
+            for($i = 0; $i < sizeof($current_user_data); $i++){
+                echo $i;
+            }
+
             echo "<pre>";
             print_r($current_user_data);
             echo "</pre>";
