@@ -101,7 +101,9 @@ class multi_choice
         foreach ($list_of_user_question_data as $current_user_data){
 
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
+                print_r($current_user_data["_order"]);
                 print_r($current_user_data["choice".$i][0]);
+
             }
 
             echo "<pre>";
