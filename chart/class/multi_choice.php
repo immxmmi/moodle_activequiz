@@ -21,10 +21,6 @@ class multi_choice
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
 
 
-        echo "<pre>";
-        print_r($list_of_user_question_data);
-        echo "<pre>";
-
         if(true){
             $selected_answers = $this->filterSelectedAnswersSingle($list_of_user_question_data);
         }else{
@@ -92,6 +88,40 @@ class multi_choice
         return $list_of_user_order_choice;
 
     }
+
+
+    private function filterSelectedAnswers($list_of_user_question_data){
+        $answers = array();
+        foreach ($list_of_user_question_data as $current_user_data){
+
+            for($i = 0; $i < sizeof($current_user_data)-1; $i++){
+
+                if (array_key_exists($current_user_data, $current_user_data["choice".$i][0]))
+                {
+                    echo "Found the Key";
+                }
+                else
+                {
+                    echo "Key not Found";
+                }
+                /*
+                $value = $current_user_data["choice".$i][0];
+                if($value){
+                    array_push( $answers,$current_user_data["_order"][$i]);
+                }
+                */
+
+
+            }
+
+        }
+
+        return $answers;
+    }
+
+
+
+
     private function filterSelectedAnswersMulti($list_of_user_question_data){
         $answers = array();
         foreach ($list_of_user_question_data as $current_user_data){
