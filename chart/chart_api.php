@@ -81,6 +81,7 @@ $labels = $answer[0]->questionsummary;
 
 switch ($questionType) {
     case "truefalse":
+        print_r($steps_data);
         $single = new single_choice($labels,$steps_data);
         $data = $chart->build_new_chart($charttype, $labels, $single->getValues());
         break;
