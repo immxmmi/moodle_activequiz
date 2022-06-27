@@ -34,7 +34,7 @@ $question_attemp = new question_attempts($allquestionengids, $slot);
 $answers = $question_attemp->getListOfAnswers();
 
 echo  "<pre>";
-print_r($answers[0][0]->getQuestionengid());
+print_r($answers[0][0]);
 echo  "<pre>";
 
 // LISTE OF questionattemptids
