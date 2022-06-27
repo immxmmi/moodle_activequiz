@@ -26,26 +26,29 @@ class single_choice
     }
 
 
-    private function filterListAnswer($steps_data){
+    private function filterListAnswer($steps_data)
+    {
 
         $rowListAnswer = array();
         $listAnswer = array();
-        foreach ($steps_data as $data){
+        foreach ($steps_data as $data) {
             array_push($rowListAnswer, $data->getAnswerList());
         }
-        foreach ($rowListAnswer as $data){
+        foreach ($rowListAnswer as $data) {
             $currentUser = array();
             foreach ($data as $step_data) {
                 $currentData = array(
                     $step_data->getName() => $step_data->getValue()
                 );
-                array_push($currentUser,$currentData);
+                array_push($currentUser, $currentData);
             }
             array_push($listAnswer, $currentUser);
         }
         return $listAnswer;
     }
-    private function filterUserAnswerList($list_user_answers){
+
+    private function filterUserAnswerList($list_user_answers)
+    {
 
         $list_of_user_order_choice = array();
 
@@ -53,49 +56,45 @@ class single_choice
 
             $current_answer = array();
             foreach ($current_user_list as $current_user_answer) {
-                $current_answer = array_merge($current_answer,$current_user_answer);
+                $current_answer = array_merge($current_answer, $current_user_answer);
             }
-            array_push($list_of_user_order_choice,$current_answer);
+            array_push($list_of_user_order_choice, $current_answer);
         }
 
         return $this->convertOrderIdToName($list_of_user_order_choice);
     }
-    private function convertOrderIdToName($list_of_user_question_data){
+
+    private function convertOrderIdToName($list_of_user_question_data)
+    {
 
         $list_of_user_order_choice = array();
 
         foreach ($list_of_user_question_data as $data) {
 
-            for($i = 0;$i < sizeof($data['_order']);$i++){
+            for ($i = 0; $i < sizeof($data['_order']); $i++) {
                 $answerId = $data['_order'][$i];
                 $answer = new mdl_question_answers($answerId);
                 $data['_order'][$i] = $answer->getAnswer();
             }
 
-            array_push($list_of_user_order_choice,$data);
+            array_push($list_of_user_order_choice, $data);
         }
 
         return $list_of_user_order_choice;
 
     }
-    private function filterSelectedAnswers($list_of_user_question_data){
+
+    private function filterSelectedAnswers($list_of_user_question_data)
+    {
         $answers = array();
 
+        foreach ($list_of_user_question_data as $current_user_data) {
 
-
-
-        foreach ($list_of_user_question_data as $current_user_data){
-
-            for($i = 0; $i < sizeof($current_user_data)-1; $i++){
-
-        array_push( $answers,$current_user_data["_order"][$current_user_data["answer"][0]]);
-       }
+            for ($i = 0; $i < sizeof($current_user_data) - 1; $i++) {
+                array_push($answers, $current_user_data["_order"][$current_user_data["answer"][0]]);
+            }
 
         }
-
-        echo "<pre>";
-        print_r($answers);
-        echo "<pre>";
         return $answers;
     }
 
@@ -104,10 +103,10 @@ class single_choice
     {
         $value_array = array();
         $counter = 0;
-        foreach ($this->labels as $currentLabel){
-            array_push($value_array,0);
-            foreach ($values as $value){
-                if(ltrim($currentLabel) === ltrim($value) ){
+        foreach ($this->labels as $currentLabel) {
+            array_push($value_array, 0);
+            foreach ($values as $value) {
+                if (ltrim($currentLabel) === ltrim($value)) {
                     $value_array[$counter]++;
                 }
             }
@@ -115,8 +114,6 @@ class single_choice
         }
         return $value_array;
     }
-
-
 
 
     public function getLabels()

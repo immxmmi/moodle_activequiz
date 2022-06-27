@@ -94,11 +94,11 @@ switch ($questionType) {
         $chart->setInfo("no Question Type Found!");
         $data = $chart->build_new_chart(null, null, null);
 }
-/*
+
 http_response_code($chart->getResponseCode());
 header('Content-Type: application/json');
 
 
 echo json_encode($data, JSON_PRETTY_PRINT);
 exit;
-*/
+
