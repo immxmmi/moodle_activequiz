@@ -15,6 +15,8 @@ class multi_choice
     {
         $this->labels = $labels;
 
+        print_r($this->labels);
+
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
 
