@@ -72,8 +72,10 @@ $multi = new multi_choice();
 $trueFalse = new true_false_choice();
 $data = null;
 
-
 $labels = $answer[0]->questionsummary;
+
+
+
 
 switch ($questionType) {
     case "singel":
@@ -88,19 +90,15 @@ switch ($questionType) {
         }
 
 
-        $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues());
+        $data = $chart->build_new_chart($charttype, $labels, $single->getValues());
         break;
 
 
 
     case "multi":
         $multi->load_quiz_data($labels,$steps_data);
-        //foreach ($steps_data as $summary) {
-        //    $responsesummary = $summary->getAnswer();
-        //}
 
-
-       // $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues());
+       // $data = $chart->build_new_chart($charttype, $labels, $single->getValues());
         break;
 
 

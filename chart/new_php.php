@@ -61,9 +61,6 @@ foreach ($step_ids as $step_id) {
 }
 
 
-
-$steps_data;
-
 $questionType = "singel";
 $single = new single_choice();
 $trueFalse = new true_false_choice();
