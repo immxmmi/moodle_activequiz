@@ -51,7 +51,7 @@ class multi_choice
             foreach ($data as $step_data) {
 
                 echo "<pre>";
-                print_r($step_data);
+                print_r($step_data->getValue());
                 echo "</pre>";
                 //array_push($listAnswer2, $data->getValue());
 
