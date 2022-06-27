@@ -39,8 +39,12 @@ class multi_choice
     }
 
     private function filterListAnswer($steps_data){
+
         $listAnswer = array();
         foreach ($steps_data as $data){
+            echo "<pre>";
+            print_r($data);
+            echo "</pre>";
             echo $data->getId();
             array_push($listAnswer,$data);
         }
