@@ -87,7 +87,7 @@ class multi_choice
 
             foreach ( $data['_order'] as $answerId){
                 $answer = new md_question_answers($answerId);
-                echo $answer;
+                echo $answer->getAnswer();
             }
 
 
