@@ -19,9 +19,4 @@ class mdl_question
     {
         return $this->qtype;
     }
-
-
-
-
-
 }

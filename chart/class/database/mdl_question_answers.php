@@ -21,7 +21,4 @@ class mdl_question_answers
     {
         return $this->answer;
     }
-
-
-
 }

@@ -43,7 +43,7 @@ class chart_builder
                         )
                     )
                 );
-               // $this->msg = json_encode($msg2[);
+                // $this->msg = json_encode($msg2[);
                 break;
             case 'pie':
                 $this->data = array(
@@ -122,7 +122,7 @@ class chart_builder
         for ($i = 1; $i <= $size; $i++) {
             array_push($background_array, $this->random_color_generator());
             $background_array = array_unique($background_array);
-            if(sizeof($background_array) === $size){
+            if (sizeof($background_array) === $size) {
                 break;
             }
         }
@@ -152,7 +152,5 @@ class chart_builder
     {
         $this->info = $info;
     }
-
-
 
 }

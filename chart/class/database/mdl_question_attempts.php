@@ -37,7 +37,7 @@ class question_attempts
     private function get_attempts_by_questionengid($result)
     {
         $attempts = array();
-        $currentAttempt = new question_attempts(null,null);
+        $currentAttempt = new question_attempts(null, null);
 
         foreach ($result as $attempt) {
             $currentAttempt->id = $attempt->id;
@@ -127,11 +127,6 @@ class question_attempts
     {
         return $this->questionid;
     }
-
-
-
-
-
 
 
 }

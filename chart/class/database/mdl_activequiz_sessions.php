@@ -1,6 +1,7 @@
 <?php
 require_once("../../../config.php");
 global $DB;
+
 class activequiz_session
 {
     private $id;
@@ -30,7 +31,8 @@ class activequiz_session
      * @param $nextstarttime
      * @param $created
      */
-    public function __construct($sessionid){
+    public function __construct($sessionid)
+    {
         global $DB;
         $sql = 'SELECT * FROM "public"."mdl_activequiz_sessions" WHERE id = :sessionid';
         $params = array('sessionid' => $sessionid);
@@ -59,22 +61,6 @@ class activequiz_session
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getActivequizid()
-    {
-        return $this->activequizid;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSessionopen()
-    {
-        return $this->sessionopen;
-    }
-
 
     /**
      * @return mixed
@@ -83,9 +69,6 @@ class activequiz_session
     {
         return $this->currentquestion;
     }
-
-
-
 
 
 }

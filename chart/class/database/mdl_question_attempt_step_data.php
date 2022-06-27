@@ -15,15 +15,13 @@ class attempt_step_data
     public function __construct($steps)
     {
 
-    if($steps != null){
+        if ($steps != null) {
 
+            global $DB;
 
-        global $DB;
-
-        foreach($steps as $step){
-        $step_id = $step->getId();
-        $this->questionattemptid = $step->getQuestionattemptid();
-
+            foreach ($steps as $step) {
+                $step_id = $step->getId();
+                $this->questionattemptid = $step->getQuestionattemptid();
 
 
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_step_data" WHERE attemptstepid = :attemptstepid';
@@ -43,13 +41,13 @@ class attempt_step_data
                     array_push($this->answer_list, $current_data);
                 }
 
+            }
+
         }
 
     }
 
-    }
-
-    private function build($id, $attemptstepid, $name, $value,$questionattemptid, array $answer_list)
+    private function build($id, $attemptstepid, $name, $value, $questionattemptid, array $answer_list)
     {
         $currentStep = new attempt_step_data(null);
         $currentStep->id = $id;
@@ -94,13 +92,6 @@ class attempt_step_data
         return $this->value;
     }
 
-    /**
-     * @return array
-     */
-    public function getStepDataList()
-    {
-        return $this->step_data_list;
-    }
 
     /**
      * @return mixed
@@ -117,9 +108,6 @@ class attempt_step_data
     {
         return $this->answer_list;
     }
-
-
-
 
 
 }

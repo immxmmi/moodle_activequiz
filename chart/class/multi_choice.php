@@ -24,26 +24,29 @@ class multi_choice
     }
 
 
-    private function filterListAnswer($steps_data){
+    private function filterListAnswer($steps_data)
+    {
 
         $rowListAnswer = array();
         $listAnswer = array();
-        foreach ($steps_data as $data){
-                array_push($rowListAnswer, $data->getAnswerList());
+        foreach ($steps_data as $data) {
+            array_push($rowListAnswer, $data->getAnswerList());
         }
-        foreach ($rowListAnswer as $data){
-                $currentUser = array();
+        foreach ($rowListAnswer as $data) {
+            $currentUser = array();
             foreach ($data as $step_data) {
                 $currentData = array(
                     $step_data->getName() => $step_data->getValue()
                 );
-                    array_push($currentUser,$currentData);
+                array_push($currentUser, $currentData);
             }
-                array_push($listAnswer, $currentUser);
+            array_push($listAnswer, $currentUser);
         }
         return $listAnswer;
     }
-    private function filterUserAnswerList($list_user_answers){
+
+    private function filterUserAnswerList($list_user_answers)
+    {
 
         $list_of_user_order_choice = array();
 
@@ -51,26 +54,28 @@ class multi_choice
 
             $current_answer = array();
             foreach ($current_user_list as $current_user_answer) {
-                $current_answer = array_merge($current_answer,$current_user_answer);
+                $current_answer = array_merge($current_answer, $current_user_answer);
             }
-                array_push($list_of_user_order_choice,$current_answer);
+            array_push($list_of_user_order_choice, $current_answer);
         }
 
         return $this->convertOrderIdToName($list_of_user_order_choice);
     }
-    private function convertOrderIdToName($list_of_user_question_data){
+
+    private function convertOrderIdToName($list_of_user_question_data)
+    {
 
         $list_of_user_order_choice = array();
 
         foreach ($list_of_user_question_data as $data) {
 
-            for($i = 0;$i < sizeof($data['_order']);$i++){
+            for ($i = 0; $i < sizeof($data['_order']); $i++) {
                 $answerId = $data['_order'][$i];
                 $answer = new mdl_question_answers($answerId);
                 $data['_order'][$i] = $answer->getAnswer();
             }
 
-           array_push($list_of_user_order_choice,$data);
+            array_push($list_of_user_order_choice, $data);
         }
 
         return $list_of_user_order_choice;
@@ -78,26 +83,24 @@ class multi_choice
     }
 
 
-    private function filterSelectedAnswers($list_of_user_question_data){
+    private function filterSelectedAnswers($list_of_user_question_data)
+    {
         $answers = array();
 
 
-        foreach ($list_of_user_question_data as $current_user_data){
+        foreach ($list_of_user_question_data as $current_user_data) {
 
-            if(sizeof($current_user_data)>1){
+            if (sizeof($current_user_data) > 1) {
 
-                if (array_key_exists("answer",$current_user_data))
-                {
-                        for ($i = 0; $i < sizeof($current_user_data) - 1; $i++) {
-                            array_push($answers, $current_user_data["_order"][$current_user_data["answer"][0]]);
-                        }
-                }
-                else
-                {
-                    for($i = 0; $i < sizeof($current_user_data)-1; $i++){
-                        $value = $current_user_data["choice".$i][0];
-                        if($value){
-                            array_push( $answers,$current_user_data["_order"][$i]);
+                if (array_key_exists("answer", $current_user_data)) {
+                    for ($i = 0; $i < sizeof($current_user_data) - 1; $i++) {
+                        array_push($answers, $current_user_data["_order"][$current_user_data["answer"][0]]);
+                    }
+                } else {
+                    for ($i = 0; $i < sizeof($current_user_data) - 1; $i++) {
+                        $value = $current_user_data["choice" . $i][0];
+                        if ($value) {
+                            array_push($answers, $current_user_data["_order"][$i]);
                         }
                     }
                 }
@@ -110,16 +113,15 @@ class multi_choice
     }
 
 
-
-
-    private function filterSelectedAnswersMulti($list_of_user_question_data){
+    private function filterSelectedAnswersMulti($list_of_user_question_data)
+    {
         $answers = array();
-        foreach ($list_of_user_question_data as $current_user_data){
+        foreach ($list_of_user_question_data as $current_user_data) {
 
-            for($i = 0; $i < sizeof($current_user_data)-1; $i++){
-                $value = $current_user_data["choice".$i][0];
-                if($value){
-                    array_push( $answers,$current_user_data["_order"][$i]);
+            for ($i = 0; $i < sizeof($current_user_data) - 1; $i++) {
+                $value = $current_user_data["choice" . $i][0];
+                if ($value) {
+                    array_push($answers, $current_user_data["_order"][$i]);
                 }
             }
 
@@ -127,6 +129,7 @@ class multi_choice
 
         return $answers;
     }
+
     private function filterSelectedAnswersSingle($list_of_user_question_data)
     {
         $answers = array();
@@ -142,15 +145,14 @@ class multi_choice
     }
 
 
-
     private function createValueArray($values)
     {
         $value_array = array();
         $counter = 0;
-        foreach ($this->labels as $currentLabel){
-            array_push($value_array,0);
-            foreach ($values as $value){
-                if(ltrim($currentLabel) === ltrim($value) ){
+        foreach ($this->labels as $currentLabel) {
+            array_push($value_array, 0);
+            foreach ($values as $value) {
+                if (ltrim($currentLabel) === ltrim($value)) {
                     $value_array[$counter]++;
                 }
             }
@@ -158,8 +160,6 @@ class multi_choice
         }
         return $value_array;
     }
-
-
 
 
     public function getLabels()

@@ -36,13 +36,11 @@ $answers = $question_attemp->getListOfAnswers();
 $questionid = $answers[0][0]->getQuestionid();
 
 
-
 // LISTE OF questionattemptids
 $questionattemptids = array();
 foreach ($answers as $answer) {
     array_push($questionattemptids, $answer[0]->getId());
 }
-
 
 
 $steps = array();
@@ -56,7 +54,7 @@ foreach ($questionattemptids as $questionattemptid) {
         array_push($step_ids, $stepID->getId());
     }
 
-    array_push($steps,$step);
+    array_push($steps, $step);
 }
 
 
@@ -64,25 +62,22 @@ $steps_data = array();
 
 foreach ($steps as $step) {
     $step_data = new attempt_step_data($step);
-    array_push($steps_data,$step_data);
+    array_push($steps_data, $step_data);
 }
-
 
 
 $current_question = new mdl_question($questionid);
 $questionType = $current_question->getQtype();
 
 
-
 $data = null;
 $labels = $answer[0]->questionsummary;
-
 
 
 switch ($questionType) {
 
     case "multichoice":
-        $multi = new multi_choice($labels,$steps_data);
+        $multi = new multi_choice($labels, $steps_data);
         $data = $chart->build_new_chart($charttype, $multi->getLabels(), $multi->getValues());
         break;
 
