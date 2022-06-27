@@ -1,6 +1,6 @@
 <?php
 require_once("../../../config.php");
-require_once("mdl_question_attempts.php");
+require_once("database/mdl_question_attempts.php");
 
 class chart_builder
 {
@@ -17,7 +17,7 @@ class chart_builder
     }
 
     //CREATE NEW CHART RETURN JSON
-    public function build_new_chart($chartType, $labels, $values, $msg2)
+    public function build_new_chart($chartType, $labels, $values)
     {
         $this->chartType = $chartType;
 
@@ -43,7 +43,7 @@ class chart_builder
                         )
                     )
                 );
-                $this->msg = json_encode($msg2);
+               // $this->msg = json_encode($msg2[);
                 break;
             case 'pie':
                 $this->data = array(

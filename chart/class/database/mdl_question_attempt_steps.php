@@ -11,18 +11,14 @@ class attempt_steps
     private $fraction;
     private $timecreated;
     private $userid;
-    private $step_list;
-    private $attemptstepids = array();
     private $answer_list = array();
 
-    public function __construct($answers)
+    public function __construct($questionattemptid)
     {
         global $DB;
-        if ($answers !== null) {
 
-            foreach ($answers as $questionattemptid) {
-                $sql = 'SELECT * FROM "public"."mdl_question_attempt_steps" WHERE questionattemptid = :questionattemptid AND sequencenumber != :sequencenumber';
-                $params = array('questionattemptid' => $questionattemptid[0]->getid(), 'sequencenumber' => 0);
+                $sql = 'SELECT * FROM "public"."mdl_question_attempt_steps" WHERE questionattemptid = :questionattemptid';
+                $params = array('questionattemptid' => $questionattemptid);
                 $result = $DB->get_records_sql($sql, $params);
 
                 foreach ($result as $answer) {
@@ -35,15 +31,12 @@ class attempt_steps
                         $answer->fraction,
                         $answer->timecreated,
                         $answer->userid,
-                        $questionattemptid[0]->getQuestionsummary());
-                    array_push($this->attemptstepids, $currentstep);
+                        $this->answer_list);
+                    array_push($this->answer_list, $currentstep);
                 }
 
+
             }
-        }
-
-    }
-
 
     private function builder($id, $questionattemptid, $sequencenumber, $state, $fraction, $timecreated, $userid, array $answer_list)
     {
@@ -82,6 +75,14 @@ class attempt_steps
     public function getAnswerList()
     {
         return $this->answer_list;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getQuestionattemptid()
+    {
+        return $this->questionattemptid;
     }
 
 

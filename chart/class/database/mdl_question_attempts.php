@@ -24,7 +24,6 @@ class question_attempts
     {
         global $DB;
         if ($allquestionengids !== null && $slot !== null) {
-
             foreach ($allquestionengids as $questionengids) {
                 $sql = 'SELECT * FROM "public"."mdl_question_attempts" WHERE  questionusageid = :questionusageid AND slot= :slot';
                 $params = array('questionusageid' => $questionengids, 'slot' => $slot);
@@ -33,7 +32,6 @@ class question_attempts
                 array_push($this->list_of_answers, $question_attemps);
             }
         }
-
     }
 
     private function get_attempts_by_questionengid($result)
@@ -74,7 +72,6 @@ class question_attempts
         }
         return $cleanList;
     }
-
 
     private function deleteCharAT($word, $index)
     {
@@ -122,6 +119,18 @@ class question_attempts
     {
         return $this->responsesummary;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getQuestionid()
+    {
+        return $this->questionid;
+    }
+
+
+
+
 
 
 

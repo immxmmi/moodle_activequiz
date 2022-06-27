@@ -5,45 +5,62 @@ global $DB;
 
 class attempt_step_data
 {
-
     private $id;
+    private $questionattemptid;
     private $attemptstepid;
     private $name;
-    private $value;
+    private $value = array();
     private $answer_list = array();
-    private $answer;
 
-    private $step_data_list = array();
-
-    public function __construct($steps_attempts)
+    public function __construct($steps)
     {
-        global $DB;
-        if ($steps_attempts !== null) {
 
-            foreach ($steps_attempts as $step) {
+    if($steps != null){
+
+
+        global $DB;
+
+        foreach($steps as $step){
+        $step_id = $step->getId();
+        $this->questionattemptid = $step->getQuestionattemptid();
+
+
 
                 $sql = 'SELECT * FROM "public"."mdl_question_attempt_step_data" WHERE attemptstepid = :attemptstepid';
-                $params = array('attemptstepid' => $step->getId());
+                $params = array('attemptstepid' => $step_id);
                 $step_data = $DB->get_records_sql($sql, $params);
+
+
                 foreach ($step_data as $data) {
-                    $current_data = $this->build($data->id,$data->attemptstepid,$data->name,$data->value,$step->getAnswerList());
-                    array_push($this->step_data_list, $current_data);
+                    $current_data = $this->build(
+                        $data->id,
+                        $data->attemptstepid,
+                        $data->name,
+                        explode(',', $data->value),
+                        $this->questionattemptid,
+                        $this->answer_list
+                    );
+                    array_push($this->answer_list, $current_data);
                 }
-            }
+
         }
+
     }
 
-    private function build($id, $attemptstepid, $name, $value, array $answer_list)
+    }
+
+    private function build($id, $attemptstepid, $name, $value,$questionattemptid, array $answer_list)
     {
         $currentStep = new attempt_step_data(null);
         $currentStep->id = $id;
         $currentStep->attemptstepid = $attemptstepid;
         $currentStep->name = $name;
         $currentStep->value = $value;
+        $currentStep->questionattemptid = $questionattemptid;
         $currentStep->answer_list = $answer_list;
-        $currentStep->answer = $answer_list[$currentStep->value];
         return $currentStep;
     }
+
 
     /**
      * @return mixed
@@ -86,6 +103,14 @@ class attempt_step_data
     }
 
     /**
+     * @return mixed
+     */
+    public function getQuestionattemptid()
+    {
+        return $this->questionattemptid;
+    }
+
+    /**
      * @return array
      */
     public function getAnswerList()
@@ -93,13 +118,7 @@ class attempt_step_data
         return $this->answer_list;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getAnswer()
-    {
-        return $this->answer;
-    }
+
 
 
 
