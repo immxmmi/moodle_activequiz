@@ -110,6 +110,16 @@ class attempt_step_data
         return $this->questionattemptid;
     }
 
+    /**
+     * @return array
+     */
+    public function getAnswerList()
+    {
+        return $this->answer_list;
+    }
+
+
+
 
 
 }
