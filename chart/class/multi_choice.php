@@ -116,6 +116,7 @@ class multi_choice
         $value_array = array();
         foreach ($this->labels as $currentLabel){
             print_r($currentLabel);
+            print_r( $values);
         }
 
         return $value_array;
