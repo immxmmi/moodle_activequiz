@@ -11,8 +11,9 @@ class multi_choice
     private $values = array();
     private $data = array();
 
-    public function load_quiz_data($steps_data)
+    public function load_quiz_data($labels,$steps_data)
     {
+        $this->labels = $labels;
 
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
