@@ -83,8 +83,9 @@ class multi_choice
 
         //$list_of_user_order_choice = array();
 
-         new md_question_answers(39);
+         $answer = new md_question_answers(39);
 
+         echo $answer->getAnswer();
         /*
         echo "<pre>";
         print_r($list_of_user_question_data);

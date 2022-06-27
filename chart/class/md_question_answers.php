@@ -11,13 +11,17 @@ class md_question_answers
         $sql = 'SELECT * FROM "public"."mdl_question_answers" WHERE id = :answerid';
         $params = array('answerid' => $answerid);
         $result = $DB->get_records_sql($sql, $params);
-
-
-        echo "<pre>";
-        print_r(strip_tags($result[$answerid]->answer));
-        echo "</pre>";
-
-        //$this->id = $result[0]->getId();
+        $this->answer = strip_tags($result[$answerid]->answer);
     }
+
+    /**
+     * @return string
+     */
+    public function getAnswer()
+    {
+        return $this->answer;
+    }
+
+
 
 }
