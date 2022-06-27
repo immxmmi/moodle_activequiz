@@ -64,13 +64,15 @@ class multi_choice
     private function filterValue($list_user_answers){
 
 
-        foreach ($list_user_answers as $current_user_list){
-            echo "<pre>";
-            print_r($current_user_list);
-            echo "</pre>";
-            break;
-        }
+        foreach ($list_user_answers as $current_user_list) {
 
+            foreach ($current_user_list as $current_user_answer) {
+                echo "<pre>";
+                print_r($current_user_answer);
+                echo "</pre>";
+                break;
+            }
+        }
 
 
     }
