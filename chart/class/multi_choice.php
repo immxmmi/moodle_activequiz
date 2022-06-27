@@ -45,9 +45,9 @@ class multi_choice
         foreach ($steps_data as $data){
                 array_push($listAnswer, $data->getAnswerList());
         }
-        foreach ($listAnswer as $data){
+        foreach ($listAnswer as $test){
             echo "<pre>";
-            print_r($data->getId());
+            print_r($test->getId());
             echo "</pre>";
                 //array_push($listAnswer2, $data->getValue());
             break;
