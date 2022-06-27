@@ -102,11 +102,11 @@ class multi_choice
         foreach ($this->labels as $currentLabel){
             array_push($value_array,0);
             foreach ($values as $value){
-
                 if(ltrim($currentLabel) === ltrim($value) ){
-                    //array_push($value_array,);
+                    $value_array[$counter]++;
                 }
             }
+            $counter++;
         }
 
             echo "<pre>";
