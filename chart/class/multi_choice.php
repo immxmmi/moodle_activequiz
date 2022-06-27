@@ -46,6 +46,10 @@ class multi_choice
             array_push($listAnswer,$data);
         }
 
+        echo "<pre>";
+        print_r($listAnswer);
+        echo "</pre>";
+
         return $listAnswer;
     }
 
