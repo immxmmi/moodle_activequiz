@@ -71,6 +71,7 @@ class multi_choice
                 print_r($current_user_answer);
                 echo "</pre>";
             }
+            break;
         }
 
 
