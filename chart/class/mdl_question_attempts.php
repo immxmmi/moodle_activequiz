@@ -120,6 +120,16 @@ class question_attempts
         return $this->responsesummary;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getQuestionid()
+    {
+        return $this->questionid;
+    }
+
+
+
 
 
 
