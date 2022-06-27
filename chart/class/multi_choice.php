@@ -104,16 +104,15 @@ class multi_choice
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
                 $value = $current_user_data["choice".$i][0];
                 if($value){
-                    echo $current_user_data["_order"][$i];
+                    array_push( $answers,$current_user_data["_order"][$i]);
                 }
 
             }
-
-            echo "<pre>";
-            print_r($current_user_data);
-            echo "</pre>";
         }
 
+            echo "<pre>";
+            print_r($answers);
+            echo "</pre>";
         return $answers;
     }
 
