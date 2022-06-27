@@ -44,6 +44,7 @@ class multi_choice
         foreach ($steps_data as $data){
             echo $data->getQuestionattemptid();
             array_push($listAnswer,$data);
+            break;
         }
 
         echo "<pre>";
