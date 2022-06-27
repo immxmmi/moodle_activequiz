@@ -48,8 +48,10 @@ class multi_choice
         }
 
         echo "<pre>";
-        print_r($listAnswer);
+        print_r($listAnswer->getAnswerList());
         echo "</pre>";
+
+
 
         return $listAnswer;
     }
