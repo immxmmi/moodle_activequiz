@@ -1,6 +1,7 @@
 <?php
 require_once("../../../config.php");
 require_once("mdl_question_attempt_step_data.php");
+require_once("md_question_answers.php");
 global $DB;
 
 class multi_choice
@@ -82,9 +83,14 @@ class multi_choice
 
         //$list_of_user_order_choice = array();
 
+         new md_question_answers(39);
+
+        /*
         echo "<pre>";
         print_r($list_of_user_question_data);
         echo "</pre>";
+*/
+
 
         //return $list_of_user_order_choice;
 
