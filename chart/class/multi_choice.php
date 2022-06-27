@@ -75,7 +75,7 @@ class multi_choice
                 array_push($list_of_user_order_choice,$current_answer);
         }
 
-        return convertOrderIdToName($list_of_user_order_choice);
+        return $this->convertOrderIdToName($list_of_user_order_choice);
     }
 
 
