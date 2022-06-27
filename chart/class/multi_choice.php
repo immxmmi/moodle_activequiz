@@ -20,11 +20,15 @@ class multi_choice
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
 
-        if(true){
 
+        echo "<pre>";
+        print_r($list_of_user_question_data);
+        echo "<pre>";
+
+        if(true){
             $selected_answers = $this->filterSelectedAnswersSingle($list_of_user_question_data);
         }else{
-        $selected_answers = $this->filterSelectedAnswersMulti($list_of_user_question_data);
+            $selected_answers = $this->filterSelectedAnswersMulti($list_of_user_question_data);
         }
 
         echo "<pre>";
