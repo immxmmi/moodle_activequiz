@@ -91,6 +91,11 @@ class multi_choice
                 $data['_order'][$i] = $answer->getAnswer();
             }
 
+            echo "<pre>";
+            //print_r($list_of_user_question_data['_order']);
+            print_r($data);
+            echo "</pre>";
+
             break;
 
         }
