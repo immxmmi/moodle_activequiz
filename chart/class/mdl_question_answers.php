@@ -2,7 +2,7 @@
 require_once("../../../config.php");
 global $DB;
 
-class md_question_answers
+class mdl_question_answers
 {
     private $answer;
 

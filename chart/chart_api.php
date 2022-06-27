@@ -8,7 +8,7 @@ require_once("class/mdl_question_attempt_step_data.php");
 require_once("class/chart_builder.php");
 require_once("class/single_choice.php");
 require_once("class/multi_choice.php");
-require_once("class/truefalsechoice.php");
+
 global $DB;
 
 // Parameter
@@ -29,6 +29,7 @@ $allquestionengids = $activequiz_attempt->getAllQuestionengids();
 $slot = $session->getCurrentquestion(); // SLOT
 // $slot = optional_param('slot', false, PARAM_TEXT); //; // SLOT
 $question_attemp = new question_attempts($allquestionengids, $slot);
+var_dump($question_attemp);
 #####################################################
 
 $answers = $question_attemp->getListOfAnswers();
@@ -77,6 +78,8 @@ $labels = $answer[0]->questionsummary;
 
 
 
+
+
 switch ($questionType) {
     case "singel":
         $single->load_quiz_data($answers,$steps_data);
@@ -93,27 +96,21 @@ switch ($questionType) {
         $data = $chart->build_new_chart($charttype, $labels, $single->getValues());
         break;
 
-
-
     case "multi":
         $multi = new multi_choice($labels,$steps_data);
         $data = $chart->build_new_chart($charttype, $multi->getLabels(), $multi->getValues());
         break;
 
 
-
-    case "true/false":
-        $trueFalse->setData($answers[0]);
-        $data = $chart->build_new_chart($charttype, $single->getLabels(), $single->getValues());
     default:
         $chart->setInfo("no Question Type Found!");
         $data = $chart->build_new_chart(null, null, null);
 }
-
+/*
 http_response_code($chart->getResponseCode());
 header('Content-Type: application/json');
 
 
 echo json_encode($data, JSON_PRETTY_PRINT);
 exit;
-
+*/

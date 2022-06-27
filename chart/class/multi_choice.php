@@ -1,7 +1,7 @@
 <?php
 require_once("../../../config.php");
 require_once("mdl_question_attempt_step_data.php");
-require_once("md_question_answers.php");
+require_once("mdl_question_answers.php");
 global $DB;
 
 class multi_choice
@@ -66,7 +66,7 @@ class multi_choice
 
             for($i = 0;$i < sizeof($data['_order']);$i++){
                 $answerId = $data['_order'][$i];
-                $answer = new md_question_answers($answerId);
+                $answer = new mdl_question_answers($answerId);
                 $data['_order'][$i] = $answer->getAnswer();
             }
 
