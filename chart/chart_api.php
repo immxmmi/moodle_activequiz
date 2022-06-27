@@ -36,7 +36,6 @@ $answers = $question_attemp->getListOfAnswers();
 
 $questionid = $answers[0][0]->getQuestionid();
 
-print_r($questionid);
 
 
 // LISTE OF questionattemptids
@@ -78,6 +77,12 @@ $questionType = $current_question->getQtype();
 
 $data = null;
 $labels = $answer[0]->questionsummary;
+
+
+
+echo "<pre>";
+print_r($steps_data);
+echo "<pre>";
 
 
 
