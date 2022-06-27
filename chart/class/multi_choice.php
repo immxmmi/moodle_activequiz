@@ -81,15 +81,15 @@ class multi_choice
 
     private function filterOrderAndName($list_of_user_question_data){
 
-        //$list_of_user_order_choice = array();
+        $list_of_user_order_choice = array();
 
-         $answer = new md_question_answers(39);
-
-         echo $answer->getAnswer();
-        /*
         echo "<pre>";
         print_r($list_of_user_question_data);
         echo "</pre>";
+
+         $answerById = new md_question_answers(39);
+
+        /*
 */
 
 
