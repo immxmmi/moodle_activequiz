@@ -17,7 +17,8 @@ class multi_choice
         //print_r($steps_data);
         echo "</pre>";
 
-        $this->filterListAnswer($steps_data);
+        $list_user_answers = $this->filterListAnswer($steps_data);
+        $row_value = $this->filterValue($list_user_answers);
 
         /*
         $question_one = $answers[0][0];
@@ -55,20 +56,15 @@ class multi_choice
             }
                 array_push($listAnswer, $currentUser);
         }
-
-        echo "<pre>";
-        print_r($listAnswer);
-        echo "</pre>";
-
-
-
         return $listAnswer;
     }
 
 
 
-    private function filterAnswer($steps_data){
-            echo test;
+    private function filterValue($list_user_answers){
+        echo "<pre>";
+        print_r($list_user_answers);
+        echo "</pre>";
     }
 
 
