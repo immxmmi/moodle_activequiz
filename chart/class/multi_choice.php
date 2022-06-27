@@ -86,12 +86,9 @@ class multi_choice
         foreach ($list_of_user_question_data as $data) {
 
             for($i = 0;$i < sizeof($data['_order']);$i++){
-                echo $data['_order'][$i];
-            }
-
-            foreach ( $data['_order'] as $answerId){
+                $answerId = $data['_order'][$i];
                 $answer = new md_question_answers($answerId);
-                echo $answer->getAnswer();
+                $data['_order'][$i] = $answer->getAnswer();
             }
 
             break;
