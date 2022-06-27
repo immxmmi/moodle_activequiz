@@ -63,7 +63,7 @@ class multi_choice
 
     private function filterValue($list_user_answers){
         echo "<pre>";
-        print_r($list_user_answers);
+        print_r($list_user_answers[0]);
         echo "</pre>";
     }
 
