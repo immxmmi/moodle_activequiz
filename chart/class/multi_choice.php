@@ -17,9 +17,10 @@ class multi_choice
 
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
-        $row_value = $this->filterOrderAndName($list_of_user_question_data);
 
-
+        echo "<pre>";
+        print_r($list_of_user_question_data);
+        echo "</pre>";
         /*
         $question_one = $answers[0][0];
 
@@ -74,12 +75,11 @@ class multi_choice
                 array_push($list_of_user_order_choice,$current_answer);
         }
 
-        return $list_of_user_order_choice;
-
+        return convertOrderIdToName($list_of_user_order_choice);
     }
 
 
-    private function filterOrderAndName($list_of_user_question_data){
+    private function convertOrderIdToName($list_of_user_question_data){
 
         $list_of_user_order_choice = array();
 
@@ -91,31 +91,10 @@ class multi_choice
                 $data['_order'][$i] = $answer->getAnswer();
             }
 
-            echo "<pre>";
-            //print_r($list_of_user_question_data['_order']);
-            print_r($data);
-            echo "</pre>";
-
-            break;
-
+           array_push($list_of_user_order_choice,$data);
         }
 
-
-
-
-
-        echo "<pre>";
-        //print_r($list_of_user_question_data['_order']);
-        print_r($list_of_user_question_data);
-        echo "</pre>";
-
-         $answerById = new md_question_answers(39);
-
-        /*
-*/
-
-
-        //return $list_of_user_order_choice;
+        return $list_of_user_order_choice;
 
     }
 
