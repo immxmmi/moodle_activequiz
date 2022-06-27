@@ -83,9 +83,6 @@ class single_choice
 
 
 
-        echo "<pre>";
-        print_r($list_of_user_question_data);
-        echo "<pre>";
 
         foreach ($list_of_user_question_data as $current_user_data){
 
@@ -98,6 +95,9 @@ class single_choice
             }
 
         }
+        echo "<pre>";
+        print_r($answers);
+        echo "<pre>";
 
         return $answers;
     }
