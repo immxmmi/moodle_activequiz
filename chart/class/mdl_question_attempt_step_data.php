@@ -102,4 +102,14 @@ class attempt_step_data
         return $this->step_data_list;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getQuestionattemptid()
+    {
+        return $this->questionattemptid;
+    }
+
+
+
 }

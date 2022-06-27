@@ -45,7 +45,7 @@ class multi_choice
             echo "<pre>";
             print_r($data);
             echo "</pre>";
-            echo $data->getId();
+            echo $data->getQuestionattemptid();
             array_push($listAnswer,$data);
         }
 
