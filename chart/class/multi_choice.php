@@ -85,7 +85,7 @@ class multi_choice
 
         foreach ($list_of_user_question_data as $data) {
 
-            for($i = 0;$i <= sizeof($data['_order']);$i++){
+            for($i = 0;$i < sizeof($data['_order']);$i++){
                 echo $data['_order'][$i];
             }
 
