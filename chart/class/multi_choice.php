@@ -14,7 +14,7 @@ class multi_choice
     {
 
         echo "<pre>";
-        print_r($steps_data[0]);
+        print_r($steps_data);
         echo "</pre>";
 
 
@@ -37,6 +37,16 @@ class multi_choice
 */
         return $this->data;
     }
+
+    private function filterListAnswer($steps_data){
+        $listAnswer = array();
+        foreach ($steps_data as $data){
+            array_push($listAnswer,$data);
+        }
+
+        return $listAnswer;
+    }
+
 
 
     private function filterAnswer($steps_data){
