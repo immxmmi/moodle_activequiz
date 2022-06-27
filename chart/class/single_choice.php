@@ -15,7 +15,7 @@ class single_choice
      */
     public function __construct(array $labels, $steps_data)
     {
-        rint_r($steps_data);
+        print_r($steps_data);
         $this->labels = $labels;
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
