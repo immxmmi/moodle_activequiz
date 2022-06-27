@@ -89,33 +89,30 @@ class multi_choice
     private function filterSelectedAnswers($list_of_user_question_data){
         $answers = array();
 
-        echo "<pre>";
-        print_r($list_of_user_question_data);
-        echo "<pre>";
 
         foreach ($list_of_user_question_data as $current_user_data){
 
-            echo sizeof($current_user_data);
+            if(sizeof($current_user_data)>1){
 
                 if (array_key_exists("answer",$current_user_data))
                 {
-                    echo "Found the Key";
+                    foreach ($list_of_user_question_data as $current_user_data) {
+
+                        for ($i = 0; $i < sizeof($current_user_data) - 1; $i++) {
+                            array_push($answers, $current_user_data["_order"][$current_user_data["answer"][0]]);
+                        }
+
+                    }
                 }
                 else
                 {
-                    echo "Key not Found";
+                    for($i = 0; $i < sizeof($current_user_data)-1; $i++){
+                        $value = $current_user_data["choice".$i][0];
+                        if($value){
+                            array_push( $answers,$current_user_data["_order"][$i]);
+                        }
+                    }
                 }
-
-
-            for($i = 0; $i < sizeof($current_user_data)-1; $i++){
-
-                /*
-                $value = $current_user_data["choice".$i][0];
-                if($value){
-                    array_push( $answers,$current_user_data["_order"][$i]);
-                }
-                */
-
 
             }
 
