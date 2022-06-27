@@ -73,7 +73,7 @@ $current_question = new mdl_question($questionid);
 $questionType = $current_question->getQtype();
 
 
-$single = new single_choice();
+
 $data = null;
 $labels = $answer[0]->questionsummary;
 
@@ -81,17 +81,7 @@ $labels = $answer[0]->questionsummary;
 
 switch ($questionType) {
     case "truefalse":
-        $single->load_quiz_data($answers,$steps_data);
-        $msg =  "";
-
-
-        foreach ($steps_data as $summary) {
-            $responsesummary = $summary->getAnswer();
-            $msg .=  "#";
-            $msg .=  $responsesummary;
-        }
-
-
+        $single = new single_choice($labels,$steps_data);
         $data = $chart->build_new_chart($charttype, $labels, $single->getValues());
         break;
 
@@ -99,7 +89,6 @@ switch ($questionType) {
         $multi = new multi_choice($labels,$steps_data);
         $data = $chart->build_new_chart($charttype, $multi->getLabels(), $multi->getValues());
         break;
-
 
     default:
         $chart->setInfo("no Question Type Found!");
