@@ -116,9 +116,8 @@ class multi_choice
         $value_array = array();
         foreach ($this->labels as $currentLabel){
             foreach ($values as $value){
-                if($currentLabel == $value){
-                    echo "gleihc";
-                }
+                var_dump($currentLabel);
+                var_dump($value);
             }
         }
 
