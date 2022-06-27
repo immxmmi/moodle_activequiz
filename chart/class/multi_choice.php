@@ -95,6 +95,8 @@ class multi_choice
 
         foreach ($list_of_user_question_data as $current_user_data){
 
+            echo sizeof($current_user_data);
+
                 if (array_key_exists("answer",$current_user_data))
                 {
                     echo "Found the Key";
