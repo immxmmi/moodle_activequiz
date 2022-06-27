@@ -97,8 +97,7 @@ switch ($questionType) {
 
     case "multi":
         $multi = new multi_choice($labels,$steps_data);
-
-       // $data = $chart->build_new_chart($charttype, $labels, $single->getValues());
+        $data = $chart->build_new_chart($charttype, $multi->getLabels(), $multi->getValues());
         break;
 
 
@@ -111,7 +110,6 @@ switch ($questionType) {
         $data = $chart->build_new_chart(null, null, null);
 }
 
-/*
 http_response_code($chart->getResponseCode());
 header('Content-Type: application/json');
 
@@ -119,4 +117,3 @@ header('Content-Type: application/json');
 echo json_encode($data, JSON_PRETTY_PRINT);
 exit;
 
-*/
