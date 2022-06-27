@@ -13,12 +13,14 @@ class mdl_question
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getAnswer()
+    public function getQtype()
     {
-        return $this->answer;
+        return $this->qtype;
     }
+
+
 
 
 

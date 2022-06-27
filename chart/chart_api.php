@@ -70,9 +70,10 @@ foreach ($steps as $step) {
 
 
 $current_question = new mdl_question($questionid);
-print_r($current_question);
+$questionType = $current_question->getQtype();
 
-$questionType = "multi";
+
+
 $single = new single_choice();
 
 $data = null;
@@ -85,7 +86,7 @@ $labels = $answer[0]->questionsummary;
 
 
 switch ($questionType) {
-    case "singel":
+    case "truefalse":
         $single->load_quiz_data($answers,$steps_data);
         $msg =  "";
 
@@ -100,7 +101,7 @@ switch ($questionType) {
         $data = $chart->build_new_chart($charttype, $labels, $single->getValues());
         break;
 
-    case "multi":
+    case "multichoice":
         $multi = new multi_choice($labels,$steps_data);
         $data = $chart->build_new_chart($charttype, $multi->getLabels(), $multi->getValues());
         break;
