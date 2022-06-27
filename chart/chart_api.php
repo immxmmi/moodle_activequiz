@@ -7,7 +7,6 @@ require_once("class/database/mdl_question_attempts.php");
 require_once("class/database/mdl_question_attempt_steps.php");
 require_once("class/database/mdl_question_attempt_step_data.php");
 require_once("class/chart_builder.php");
-require_once("class/single_choice.php");
 require_once("class/multi_choice.php");
 
 global $DB;
