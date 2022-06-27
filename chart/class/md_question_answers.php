@@ -12,8 +12,9 @@ class md_question_answers
         $params = array('answerid' => $answerid);
         $result = $DB->get_records_sql($sql, $params);
 
+
         echo "<pre>";
-        print_r($result[$answerid]->answer);
+        print_r(strip_tags($result[$answerid]->answer));
         echo "</pre>";
 
         //$this->id = $result[0]->getId();
