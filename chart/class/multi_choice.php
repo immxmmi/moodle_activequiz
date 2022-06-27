@@ -22,9 +22,9 @@ class multi_choice
 
         if(true){
 
-        $selected_answers = $this->filterSelectedAnswersMulti($list_of_user_question_data);
-        }else{
             $selected_answers = $this->filterSelectedAnswersSingle($list_of_user_question_data);
+        }else{
+        $selected_answers = $this->filterSelectedAnswersMulti($list_of_user_question_data);
         }
 
         echo "<pre>";
