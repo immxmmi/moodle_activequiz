@@ -40,35 +40,24 @@ class multi_choice
 
     private function filterListAnswer($steps_data){
 
+        $rowListAnswer = array();
         $listAnswer = array();
-        $listAnswer2 = array();
         foreach ($steps_data as $data){
-                array_push($listAnswer, $data->getAnswerList());
+                array_push($rowListAnswer, $data->getAnswerList());
         }
-        foreach ($listAnswer as $data){
-
-
+        foreach ($rowListAnswer as $data){
             foreach ($data as $step_data) {
-
                 $currentData = array(
                     array($step_data->getName() => $step_data->getValue())
                 );
-                echo "<pre>";
-                print_r($currentData);
-                echo "</pre>";
-
-               // array_push($listAnswer2, $data->getValue());
-
-
+                array_push($listAnswer, $currentData);
             }
-            break;
-
         }
-/*
+
         echo "<pre>";
         print_r($listAnswer);
         echo "</pre>";
-*/
+
 
 
         return $listAnswer;
