@@ -13,13 +13,13 @@ class multi_choice
     public function load_quiz_data($answers,$steps_data)
     {
 
-        echo "<pre>";
-        //print_r($steps_data);
-        echo "</pre>";
 
         $list_user_answers = $this->filterListAnswer($steps_data);
-        $row_value = $this->filterValue($list_user_answers);
+        $row_value = $this->filterUserAnswerList($list_user_answers);
 
+        echo "<pre>";
+        print_r($row_value);
+        echo "</pre>";
         /*
         $question_one = $answers[0][0];
 
@@ -61,22 +61,20 @@ class multi_choice
 
 
 
-    private function filterValue($list_user_answers){
+    private function filterUserAnswerList($list_user_answers){
 
+        $list_of_user_order_choice = array();
 
         foreach ($list_user_answers as $current_user_list) {
 
             $current_answer = array();
             foreach ($current_user_list as $current_user_answer) {
                 $current_answer = array_merge($current_answer,$current_user_answer);
-                //array_push($current_answer,$current_user_answer[0]);
             }
-                echo "<pre>";
-                print_r($current_answer);
-                echo "</pre>";
-            break;
+                array_push($list_of_user_order_choice,$current_answer);
         }
 
+        return $list_of_user_order_choice;
 
     }
 
