@@ -46,13 +46,18 @@ class multi_choice
                 array_push($listAnswer, $data->getAnswerList());
         }
         foreach ($listAnswer as $data){
-                array_push($listAnswer2, $data->getAnswerList()[0]);
-        }
+            echo "<pre>";
+            print_r($data);
+            echo "</pre>";
+                array_push($listAnswer2, $data->getAnswerList());
+            break;
 
+        }
+/*
         echo "<pre>";
         print_r($listAnswer);
         echo "</pre>";
-
+*/
 
 
         return $listAnswer;
