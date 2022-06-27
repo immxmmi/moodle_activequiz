@@ -85,4 +85,13 @@ class activequiz_attempt
     {
         return $this->all_questionengids;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getQuestionengid()
+    {
+        return $this->questionengid;
+    }
+
 }
