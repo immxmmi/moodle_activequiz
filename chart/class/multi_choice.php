@@ -115,8 +115,11 @@ class multi_choice
     {
         $value_array = array();
         foreach ($this->labels as $currentLabel){
+            foreach ($values as $value){
             print_r($currentLabel);
-            print_r( $values);
+            print_r( $value);
+
+            }
         }
 
         return $value_array;
