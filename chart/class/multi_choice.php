@@ -14,10 +14,10 @@ class multi_choice
     {
 
         echo "<pre>";
-        print_r($steps_data);
+        //print_r($steps_data);
         echo "</pre>";
 
-
+        filterListAnswer($steps_data);
 
         /*
         $question_one = $answers[0][0];
@@ -41,6 +41,7 @@ class multi_choice
     private function filterListAnswer($steps_data){
         $listAnswer = array();
         foreach ($steps_data as $data){
+            echo $data->getId();
             array_push($listAnswer,$data);
         }
 
