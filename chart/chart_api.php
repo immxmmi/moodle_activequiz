@@ -70,7 +70,6 @@ foreach ($steps as $step) {
 $questionType = "multi";
 $single = new single_choice();
 
-$trueFalse = new true_false_choice();
 $data = null;
 
 $labels = $answer[0]->questionsummary;
