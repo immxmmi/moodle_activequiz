@@ -43,7 +43,6 @@ class multi_choice
         $listAnswer = array();
         foreach ($steps_data as $data){
                 array_push($listAnswer, $data->getAnswerList());
-            break;
         }
 
         echo "<pre>";
