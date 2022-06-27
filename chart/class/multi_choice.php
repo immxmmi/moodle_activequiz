@@ -60,7 +60,6 @@ class multi_choice
                 echo "</pre>";
                // array_push($listAnswer2, $data->getValue());
 
-                break;
 
             }
             break;
