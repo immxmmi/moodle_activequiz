@@ -100,7 +100,7 @@ class multi_choice
 
         $answers = array();
         foreach ($list_of_user_question_data as $current_user_data){
-                print_r($current_user_data["_order"]);
+              //  print_r($current_user_data["_order"]);
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
                 $value = $current_user_data["choice".$i][0];
                 if($value){
