@@ -11,9 +11,8 @@ class multi_choice
     private $values = array();
     private $data = array();
 
-    public function load_quiz_data($answers,$steps_data)
+    public function load_quiz_data($steps_data)
     {
-
 
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
@@ -59,9 +58,6 @@ class multi_choice
         }
         return $listAnswer;
     }
-
-
-
     private function filterUserAnswerList($list_user_answers){
 
         $list_of_user_order_choice = array();
@@ -77,8 +73,6 @@ class multi_choice
 
         return $this->convertOrderIdToName($list_of_user_order_choice);
     }
-
-
     private function convertOrderIdToName($list_of_user_question_data){
 
         $list_of_user_order_choice = array();
