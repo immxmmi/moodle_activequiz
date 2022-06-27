@@ -49,7 +49,7 @@ class multi_choice
             echo "<pre>";
             print_r($data);
             echo "</pre>";
-                array_push($listAnswer2, $data->getAnswerList());
+              //  array_push($listAnswer2, $data->getAnswerList());
             break;
 
         }
