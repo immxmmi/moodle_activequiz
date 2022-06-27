@@ -82,13 +82,13 @@ class single_choice
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
 
                 print_r($current_user_data);
-/*
+
                 $value = $current_user_data["choice".$i][0];
                 if($value){
                     array_push( $answers,$current_user_data["_order"][$i]);
                 }
 
-*/
+
             }
 
         }
