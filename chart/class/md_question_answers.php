@@ -13,7 +13,7 @@ class md_question_answers
         $result = $DB->get_records_sql($sql, $params);
 
         echo "<pre>";
-        print_r($result->answer);
+        print_r($result[$answerid]);
         echo "</pre>";
 
         //$this->id = $result[0]->getId();
