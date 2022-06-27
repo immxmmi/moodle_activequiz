@@ -36,6 +36,8 @@ $answers = $question_attemp->getListOfAnswers();
 
 $questionid = $answers[0][0]->getQuestionid();
 
+print_r($questionid);
+
 
 // LISTE OF questionattemptids
 $questionattemptids = array();
@@ -95,10 +97,10 @@ switch ($questionType) {
         $data = $chart->build_new_chart(null, null, null);
 }
 
+/*
 http_response_code($chart->getResponseCode());
 header('Content-Type: application/json');
 
-
 echo json_encode($data, JSON_PRETTY_PRINT);
 exit;
-
+*/
