@@ -20,7 +20,15 @@ class single_choice
         $list_user_answers = $this->filterListAnswer($steps_data);
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
 
+
+        echo "<pre>";
+        print_r($list_of_user_question_data);
+        echo "<pre>";
+
         $selected_answers = $this->filterSelectedAnswers($list_of_user_question_data);
+
+
+
 
         $this->values = $this->createValueArray($selected_answers);
     }

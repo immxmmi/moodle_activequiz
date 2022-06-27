@@ -80,9 +80,7 @@ $labels = $answer[0]->questionsummary;
 
 
 
-echo "<pre>";
-print_r($steps_data);
-echo "<pre>";
+
 
 
 
