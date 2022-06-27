@@ -18,10 +18,10 @@ class single_choice
 
         $this->labels = $labels;
         $list_user_answers = $this->filterListAnswer($steps_data);
-        echo "<pre>";
-        print_r($list_user_answers);
-        echo "<pre>";
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
+        echo "<pre>";
+        print_r($list_of_user_question_data);
+        echo "<pre>";
 
 
         $selected_answers = $this->filterSelectedAnswers($list_of_user_question_data);
