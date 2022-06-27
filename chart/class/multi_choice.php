@@ -83,6 +83,16 @@ class multi_choice
 
         $list_of_user_order_choice = array();
 
+        foreach ($list_of_user_question_data as $data) {
+            echo "<pre>";
+            print_r($data['_order']);
+            echo "</pre>";
+        }
+
+
+
+
+
         echo "<pre>";
         //print_r($list_of_user_question_data['_order']);
         print_r($list_of_user_question_data);
