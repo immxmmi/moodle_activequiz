@@ -88,7 +88,7 @@ class single_choice
 
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
         echo "<pre>";
-        print_r($current_user_data["answer"]);
+        print_r($current_user_data["answer"][0]);
         echo "<pre>";
 
 
