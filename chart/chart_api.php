@@ -93,7 +93,7 @@ switch ($questionType) {
 
 
     case "multi":
-        echo print_r($answer->questionsummary);
+        echo print_r($answer[0]->questionsummary);
         $multi->load_quiz_data($steps_data);
         //foreach ($steps_data as $summary) {
         //    $responsesummary = $summary->getAnswer();
