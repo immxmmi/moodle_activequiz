@@ -21,8 +21,6 @@ class multi_choice
         $list_of_user_question_data = $this->filterUserAnswerList($list_user_answers);
         $selected_answers = $this->filterSelectedAnswers($list_of_user_question_data);
         $this->values = $this->createValueArray($selected_answers);
-
-
     }
 
 
@@ -99,9 +97,6 @@ class multi_choice
     {
         $value_array = array();
         $counter = 0;
-        echo "<pre>";
-        print_r($this->labels);
-        echo "<pre>";
         foreach ($this->labels as $currentLabel){
             array_push($value_array,0);
             foreach ($values as $value){
@@ -111,10 +106,6 @@ class multi_choice
             }
             $counter++;
         }
-
-            echo "<pre>";
-            print_r($value_array);
-            echo "<pre>";
         return $value_array;
     }
 
