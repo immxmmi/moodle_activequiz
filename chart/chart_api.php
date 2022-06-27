@@ -29,7 +29,9 @@ $allquestionengids = $activequiz_attempt->getAllQuestionengids();
 $slot = $session->getCurrentquestion(); // SLOT
 // $slot = optional_param('slot', false, PARAM_TEXT); //; // SLOT
 $question_attemp = new question_attempts($allquestionengids, $slot);
-var_dump($question_attemp);
+echo  "<pre>";
+print_r($question_attemp);
+echo  "<pre>";
 #####################################################
 
 $answers = $question_attemp->getListOfAnswers();
