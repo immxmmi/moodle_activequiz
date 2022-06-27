@@ -1,7 +1,7 @@
 <?php
 require_once("../../../config.php");
-require_once("mdl_question_attempt_step_data.php");
-require_once("mdl_question_answers.php");
+require_once("database/mdl_question_attempt_step_data.php");
+require_once("database/mdl_question_answers.php");
 global $DB;
 
 class multi_choice
