@@ -87,17 +87,20 @@ class single_choice
         foreach ($list_of_user_question_data as $current_user_data){
 
             for($i = 0; $i < sizeof($current_user_data)-1; $i++){
+        echo "<pre>";
+        print_r($current_user_data);
+        echo "<pre>";
+
+
+        /*
                 $value = $current_user_data[$i][0];
                 if($value){
                     array_push( $answers,$current_user_data["_order"][$i]);
                 }
-
+*/
             }
 
         }
-        echo "<pre>";
-        print_r($answers);
-        echo "<pre>";
 
         return $answers;
     }
