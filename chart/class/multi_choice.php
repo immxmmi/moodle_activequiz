@@ -71,6 +71,7 @@ class multi_choice
                 echo "<pre>";
                 print_r($current_user_answer);
                 echo "</pre>";
+                $current_answer = array_merge($current_answer,$current_user_answer);
                 //array_push($current_answer,$current_user_answer[0]);
             }
             break;
