@@ -100,8 +100,12 @@ class multi_choice
         $value_array = array();
         foreach ($this->labels as $currentLabel){
             foreach ($values as $value){
+
+                if(ltrim($currentLabel) === ltrim($value) ){
+
                 var_dump(ltrim($currentLabel));
                 var_dump(ltrim($value));
+                }
             }
         }
 
