@@ -33,9 +33,8 @@ $question_attemp = new question_attempts($allquestionengids, $slot);
 
 $answers = $question_attemp->getListOfAnswers();
 
-echo  "<pre>";
-print_r($answers[0][0]->getQuestionid());
-echo  "<pre>";
+$questionid = $answers[0][0]->getQuestionid();
+
 
 // LISTE OF questionattemptids
 $questionattemptids = array();
@@ -68,6 +67,9 @@ foreach ($steps as $step) {
 }
 
 
+
+$current_question = new mdl_question($questionid);
+print_r($current_question);
 
 $questionType = "multi";
 $single = new single_choice();
