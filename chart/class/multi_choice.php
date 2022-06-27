@@ -101,7 +101,7 @@ class multi_choice
         foreach ($list_of_user_question_data as $current_user_data){
             echo "<pre>";
             print_r($current_user_data);
-            echo "</pre>"
+            echo "</pre>";
         }
     }
 
